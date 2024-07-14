@@ -142,7 +142,7 @@ export const DemoLabels = styled.label`
 export const DemoInputs = styled.input`
     height: 58px;
     border-radius: 8px;
-    border: 1px solid var(--200, #cfcbea);
+    border: 1px solid #cfcbea;
     background: var(--100, var(--100, #efeef8));
     width: 100%;
     padding: 0 15px;
