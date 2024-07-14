@@ -131,7 +131,7 @@ export const DemoLeftContainer = styled.div`
 `;
 
 export const DemoLabels = styled.label`
-    color: var(--500, #6053b9);
+    color: #6053b9 ;
     font-family: "Public Sans";
     font-size: 14px;
     font-style: normal;
