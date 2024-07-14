@@ -15,7 +15,7 @@ function HomeNavbar() {
             <NavbarContainer>
                 <NavbarLeft>EduManSim</NavbarLeft>
                 <NavbarRight>
-                    <p style={{ color: "black" }}>010-8384-1651</p>
+                    <p style={{ color: "black" }}>010-1231-1313</p>
                     <NavbarRightButton $eng>
                         <img src={earthIcon} alt="" />
                         ENG
