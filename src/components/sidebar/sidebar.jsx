@@ -29,12 +29,8 @@ function Sidebar() {
 
     return (
         <div>
-            <div style={{width:"100%", height:"80px", position:"relative"}}>
-                <NavbarContainer />
-            </div>
-            <div
-                style={{ width: "256px", position: "relative", height: "" }}
-            >
+            <NavbarContainer />
+            <div style={{ width: "256px", position: "relative", height: "" }}>
                 <SidebarContainer>
                     <Logotype>Logotype</Logotype>
                     <div

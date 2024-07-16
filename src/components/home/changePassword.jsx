@@ -6,9 +6,9 @@ import {
     DemoLabels,
     LoginContainer,
     LoginLeft,
-    LoginLeftButton,
     LoginLeftLogo,
     LoginRight,
+    SendButton,
 } from "./style";
 
 import loginImage from "../../assets/login-image.png";
@@ -162,7 +162,7 @@ function ChangePassword() {
                     </div>
 
                     <Link to={"/"}>
-                        <LoginLeftButton>Next</LoginLeftButton>
+                        <SendButton>Next</SendButton>
                     </Link>
                 </div>
             </LoginLeft>

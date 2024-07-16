@@ -4,15 +4,15 @@ import homeBackground from "../../assets/homepage-background.png";
 // Home
 export const HomeContainer = styled.div`
     background-image: url(${homeBackground});
-    background-color: #2C2669;
+    background-color: #2c2669;
     position: absolute;
     top: 0px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    height: 100vh; 
-    width: 100vw; 
+    height: 100vh;
+    width: 100vw;
     background-position: 10% 88%;
     flex-direction: column;
     color: white;
@@ -47,7 +47,7 @@ export const HomeFooterContainer = styled.div`
     position: absolute;
     bottom: 0;
     /* gap: 20px; */
-    p{
+    p {
         margin: 20px 0;
     }
 `;
@@ -103,22 +103,23 @@ export const NavbarRightButton = styled.button`
 
 // Demo
 export const DemoContainer = styled.div`
-    background-color: #efeef8;
-    padding-top: 35px;
-    padding-bottom: 50px;
-    min-height: 100vh;
+    padding-top: 30px;
+    padding-bottom: 30px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     gap: 60px;
 `;
 
 export const DemoLeftContainer = styled.div`
     width: 563px;
-    height: 850px;
-    border-radius: 20px;
+    border-radius: 18px;
     background: var(--Color-7, #fff);
     padding: 30px 40px;
+    box-shadow: 0px 2px 7px 0px #a1a1a173;
+    position: relative;
+    z-index: 1;
+    /* overflow: hidden; */
+
     p {
         color: var(--600, #2c2669);
         font-family: "Public Sans";
@@ -130,13 +131,61 @@ export const DemoLeftContainer = styled.div`
     }
 `;
 
-export const DemoLabels = styled.label`
-    color: #6053b9 ;
+export const LoginContainerAnimation = styled.div`
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &::before {
+        /* content: "";
+        display: block;
+        background: linear-gradient(
+            90deg,
+            hsla(197, 100%, 64%, 1) 0%,
+            hsla(339, 100%, 55%, 1) 100%
+        );
+        height: 1000px;
+        width: 1000px;
+        position: absolute;
+        animation: rotate 5s linear infinite;
+        z-index: 0; */
+        content: "";
+        display: block;
+        background: linear-gradient(
+            90deg,
+            rgb(255 0 0) 0%,
+            rgb(0 36 255 / 75%) 50%,
+            rgb(255 255 255 / 23%) 100%
+        );
+        width: 300px;
+        height: 845px;
+        transform: translate(0);
+        position: absolute;
+        animation: rotate 12s linear forwards infinite;
+        z-index: 0;
+        top: 50%;
+        transform-origin: top center;
+    }
+    @keyframes rotate {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+`;
+
+export const DemoLabels = styled.div`
+    color: #6053b9;
     font-family: "Public Sans";
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
     line-height: 16px;
+    margin-bottom: 8px;
 `;
 
 export const DemoInputs = styled.input`
@@ -172,13 +221,61 @@ export const SendButton = styled.button`
     border: none;
     cursor: pointer;
     font-size: 18px;
+    transition: all 0.2s;
+
+    &:hover {
+        box-shadow: 0px 4px 5px 0px #37366d99;
+        background: #080054;
+    }
 `;
 
 export const DemoLeftLine = styled.div`
     width: 100%;
     height: 1px;
-    background: #6053b9;
-    margin-top: 20px;
+    background: #6053b952;
+`;
+
+export const LoginButton = styled.button`
+    width: 136px;
+    height: 44px;
+    border-radius: 6px;
+    background: none;
+    border-bottom: 1px solid #2c2669;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.1s;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.2) 100%
+            ),
+            #2c2669;
+        transition: top 0.5s;
+        z-index: -1;
+    }
+
+    &:hover:before {
+        top: 0;
+    }
+
+    &:hover {
+        color: #fff;
+    }
 `;
 
 export const DemoRightContainer = styled.div`
@@ -245,6 +342,12 @@ export const RequestDemoButton = styled.button`
     font-size: 18px;
     cursor: pointer;
     border: none;
+    transition: all 0.1s;
+
+    &:hover {
+        box-shadow: 0px 4px 5px 0px #37366d99;
+        background: #080054;
+    }
 `;
 
 // Login
@@ -262,7 +365,10 @@ export const LoginLeft = styled.div`
     height: 890px;
     border-radius: 20px;
     padding: 40px;
-    background: var(--Color-7, #fff);
+    background: #fff;
+    box-shadow: 0px 2px 7px 0px #a1a1a173;
+    position: relative;
+    overflow: hidden;
 
     h1 {
         color: var(--600, #2c2669);
@@ -319,28 +425,12 @@ export const LoginLeftLogo = styled.div`
     align-items: center;
 `;
 
-export const LoginLeftButton = styled.button`
-    display: flex;
-    width: 483px;
-    height: 44px;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 18px;
-    border-radius: 6px;
-    background: var(
-        --600,
-        linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
-        #2c2669
-    );
-    cursor: pointer;
-    border: none;
-`;
+
 
 export const LoginLeftLine = styled.div`
     width: 100%;
     height: 1px;
-    background: #6053b9;
+    background: #6053b952;
     margin-top: 30px;
 `;
 
@@ -354,7 +444,12 @@ export const ForgotPasswordDiv = styled.div`
     display: flex;
     align-items: center;
     margin-top: 30px;
-    gap: 12px;
+    gap: 2px;
     width: 50px;
     cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover{
+        gap: 25px;
+    }
 `;

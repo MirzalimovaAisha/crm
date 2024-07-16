@@ -9,7 +9,6 @@ export const TeachersPageContainer = styled.div`
     /* align-items: center; */
     /* justify-content: center; */
     margin-left: 256px;
-    margin-bottom: 274px;
     gap: 50px;
 `;
 

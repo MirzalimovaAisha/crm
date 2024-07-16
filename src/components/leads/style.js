@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export const LeadsContainer = styled.div`
-    /* height: 100vh; */
-    padding-bottom: 120px;
+    /* padding-bottom: 120px; */
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
     padding-top: 40px;
     margin-left: 256px;
