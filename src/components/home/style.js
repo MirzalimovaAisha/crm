@@ -35,6 +35,13 @@ export const RequestDemo = styled.button`
     font-size: 18px;
     font-weight: 500;
     margin-top: 30px;
+    transition: all 0.2s;
+
+    &:hover{
+        background: #17152a;
+        color: #fff;
+        box-shadow: inset 0px -2px 3px 0px #ffffff91;
+    }
 `;
 
 export const HomeFooterContainer = styled.div`

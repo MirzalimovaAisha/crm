@@ -165,8 +165,7 @@ export const CircleIcon = styled.div`
 `;
 
 export const PageSelect = styled.select`
-    margin: 20px;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: 6px;
     border: 1px solid #2C2669;
     cursor: pointer;
@@ -183,3 +182,6 @@ export const PageSelect = styled.select`
         background-color: #E0E0EB;
     }
 `;
+
+export const Pagenation =styled.div`
+`
