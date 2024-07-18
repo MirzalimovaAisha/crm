@@ -7,10 +7,10 @@ import {
   HistoryGap,
 } from "./style";
 
-function History({ data }) {
+function GroupHistory({ data }) {
   return (
     <GroupsCard style={{ height: "300px", width: "1400px" }}>
-      <HistoryCardTop>
+      {/* <HistoryCardTop>
         <GroupName style={{ fontSize: "20px" }}>Status changed</GroupName>
         <HistoryGap style={{ flexDirection: "column", alignItems: "end" }}>
           <HistoryCardData>
@@ -46,11 +46,11 @@ function History({ data }) {
         <HistoryCardData style={{ fontSize: "14px" }}>
           {data.student.previosStatus}
         </HistoryCardData>
-      </HistoryGap>
+      </HistoryGap> */}
 
       <Line style={{ background: "#BFBAE3", margin: "20px 0" }} />
     </GroupsCard>
   );
 }
 
-export default History;
+export default GroupHistory;

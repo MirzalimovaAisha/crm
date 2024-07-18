@@ -14,7 +14,7 @@ function StudentGroups({ data }) {
                 {data.map((value, key) => {
                     const { photo, name } = value.group;
                     return (
-                        <GroupsCard key={key} style={{height: '435px'}}>
+                        <GroupsCard key={key} >
                             {photo ? (
                                 <img 
                                     src={photo} 
@@ -51,7 +51,7 @@ function StudentGroups({ data }) {
                                 Strudents & room
                             </GroupCardCenter>
                             <Line />
-                            <GroupCardCenter>
+                            <GroupCardCenter style={{margin:"0px"}}>
                                 <div style={{display: 'flex', flexDirection: 'column'}}>
                                     <GroupTime>{value.group.time.from}-{value.group.time.to}</GroupTime>
                                     Mon, Tue, Wed, Thu, Fri

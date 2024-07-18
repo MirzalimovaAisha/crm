@@ -109,33 +109,3 @@ export const CardSpaceBetween = styled.div`
     }
 `
 
-export const EditProfileModal = styled.div`
-    padding: 40px 60px;
-    display: flex;
-    flex-direction: column;
-
-    h1 {
-        color: var(--600, #2C2669);
-        font-family: "Public Sans";
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 32px; 
-        margin-bottom: 30px;
-    }
-`
-
-export const UpdateProfileButton = styled.button`
-    display: flex;
-    width: 100%;
-    height: 44px;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    font-size: 18px;
-    margin-top: 50px;
-    border-radius: 6px;
-    background: var(--600, linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), #2C2669);
-    border: none;
-    cursor: pointer;
-`

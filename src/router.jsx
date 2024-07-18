@@ -13,6 +13,7 @@ import TeacherInfo from './components/teachers/teacherInfo'
 import Groups from './components/groups/group'
 import Students from './components/students/students'
 import StudentInfo from './components/students/studentInfo'
+import GroupInfoComponent from './components/groups/groupInfo'
 
 function RouterComponent() {
   const location = useLocation()
@@ -28,10 +29,15 @@ function RouterComponent() {
             <Route path='/login/change-password' element={<ChangePassword/>}/>
             
             <Route path='/profile' element={<Profile/>}/>
+
             <Route path='/leads' element={<Leads/>}/>
+
             <Route path='/teachers' element={<TeachersPage/>}/>
             <Route path='/teacher/:id' element={<TeacherInfo/>}/>
+
             <Route path='/groups' element={<Groups/>}/>
+            <Route path='/group/:id' element={<GroupInfoComponent />} />
+
             <Route path='/students' element={<Students/>}/>
             <Route path='/student/:id' element={<StudentInfo/>}/>
         </Routes>

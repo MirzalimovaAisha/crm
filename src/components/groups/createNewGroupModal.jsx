@@ -2,35 +2,35 @@ import * as React from "react";
 import Modal from "@mui/joy/Modal";
 import ModalClose from "@mui/joy/ModalClose";
 import {
-    DemoInputs,
-    DemoLabels,
-    DemoLeftContainer,
     SendButton,
 } from "../home/style";
 import {
     AddNewTeacher,
+    AddTeacherModalBottom,
+    AddTeacherModalStyle,
     AddTeacherModalTop,
+    CustomDateButton,
     ModalInput,
     ModalInputContainer,
     ModalLabel,
+    UploadPhoto,
 } from "../teachers/style";
 import { Option, Select, selectClasses } from "@mui/joy";
 import { KeyboardArrowDown } from "@mui/icons-material";
 import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/lab";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
-import DatePicker from "@mui/lab/DatePicker";
+// import DatePicker from "@mui/lab/DatePicker";
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export function AddNewGroupModal({ open, setOpen }) {
-    // const [phone, setPhone] = React.useState("");
-    // const [password, setPassword] = React.useState("");
-    const [showPassword, setShowPassword] = React.useState(false);
+    const [startDate, setStartDate] = React.useState(null);
+    const [endDate, setEndDate] = React.useState(null);
+
     const [fileName, setFileName] = React.useState("");
     const [selectedDate, setSelectedDate] = React.useState(null);
-
-    // const togglePasswordVisibility = () => {
-    //     setShowPassword(!showPassword);
-    // };
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -46,6 +46,7 @@ export function AddNewGroupModal({ open, setOpen }) {
             <Modal
                 aria-labelledby="modal-title"
                 aria-describedby="modal-desc"
+                disableAutoFocus
                 open={open}
                 onClose={() => setOpen(false)}
                 sx={{
@@ -54,37 +55,35 @@ export function AddNewGroupModal({ open, setOpen }) {
                     alignItems: "center",
                 }}
             >
-                <DemoLeftContainer
-                    style={{ width: "650px", borderRadius: "0px" }}
-                >
-                    <AddTeacherModalTop
-                        style={{ marginLeft: "-40px", marginTop: "-30px" }}
-                    >
+                <AddTeacherModalStyle>
+                    <AddTeacherModalTop>
                         <ModalClose sx={{ position: "absolute", mt: "-5px" }} />
                     </AddTeacherModalTop>
-                    <AddNewTeacher>Create new group</AddNewTeacher>
-                    <div
+                    <AddTeacherModalBottom
                         style={{
                             display: "flex",
-                            flexDirection: "column",
                             gap: "30px",
+                            flexDirection: "column",
                         }}
                     >
-                        <div>
-                            <DemoLabels htmlFor="name">Group name</DemoLabels>
-                            <DemoInputs
+                        <AddNewTeacher>Create new group</AddNewTeacher>
+                        <ModalInputContainer>
+                            <ModalLabel htmlFor="name">Group name</ModalLabel>
+                            <ModalInput
                                 id="name"
                                 placeholder="Enter group name"
                                 type="text"
                             />
-                        </div>
+                        </ModalInputContainer>
 
                         <div style={{ display: "flex", gap: "30px" }}>
-                            <ModalInputContainer style={{ margin: "0" }}>
+                            <ModalInputContainer
+                                style={{ margin: "0", position: "relative" }}
+                            >
                                 <ModalLabel htmlFor="name">
                                     Uplaod photo
                                 </ModalLabel>
-                                <input
+                                <UploadPhoto
                                     id="photo"
                                     type="file"
                                     onChange={handleFileChange}
@@ -95,20 +94,20 @@ export function AddNewGroupModal({ open, setOpen }) {
                                     value={fileName}
                                     placeholder="Upload photo"
                                     style={{
-                                        width: "270px",
+                                        width: "250px",
                                     }}
                                 />
                             </ModalInputContainer>
-                            <div>
-                                <DemoLabels htmlFor="Surname">
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="Surname">
                                     Select course
-                                </DemoLabels>
+                                </ModalLabel>
                                 <Select
                                     placeholder="Select Course"
                                     d="Surname"
                                     indicator={<KeyboardArrowDown />}
                                     sx={{
-                                        width: "270px",
+                                        width: "250px",
                                         display: "flex",
                                         height: "58px",
                                         justifyContent: "center",
@@ -139,15 +138,7 @@ export function AddNewGroupModal({ open, setOpen }) {
                                             }}
                                             value="IT Bootcamp"
                                         >
-                                            <div
-                                                style={{
-                                                    "&:hover": {
-                                                        backgroundColor: "#fff",
-                                                    },
-                                                }}
-                                            >
-                                                IT Bootcamp
-                                            </div>
+                                            <div>IT Bootcamp</div>
                                         </Option>
                                         <Option
                                             sx={{
@@ -181,13 +172,13 @@ export function AddNewGroupModal({ open, setOpen }) {
                                         </Option>
                                     </div>
                                 </Select>
-                            </div>
+                            </ModalInputContainer>
                         </div>
 
-                        <div>
-                            <DemoLabels htmlFor="Surname">
+                        <ModalInputContainer>
+                            <ModalLabel htmlFor="Surname">
                                 Select teacher
-                            </DemoLabels>
+                            </ModalLabel>
                             <Select
                                 placeholder="Select teacher"
                                 d="Surname"
@@ -268,12 +259,12 @@ export function AddNewGroupModal({ open, setOpen }) {
                                     </Option>
                                 </div>
                             </Select>
-                        </div>
+                        </ModalInputContainer>
 
-                        <div>
-                            <DemoLabels htmlFor="Surname">
+                        <ModalInputContainer>
+                            <ModalLabel htmlFor="Surname">
                                 Select lesson start time
-                            </DemoLabels>
+                            </ModalLabel>
                             <Select
                                 placeholder="Select lesson start time"
                                 d="Surname"
@@ -364,27 +355,25 @@ export function AddNewGroupModal({ open, setOpen }) {
                                     </Option>
                                 </div>
                             </Select>
-                        </div>
+                        </ModalInputContainer>
 
                         <div style={{ display: "flex", gap: "30px" }}>
-                            <div>
-                                <DemoLabels htmlFor="Surname">
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="Surname">
                                     Select days
-                                </DemoLabels>
+                                </ModalLabel>
                                 <Select
-                                    placeholder="Select Course"
+                                    placeholder="Select days"
                                     d="Surname"
                                     indicator={<KeyboardArrowDown />}
                                     sx={{
-                                        width: "270px",
+                                        width: "250px",
                                         display: "flex",
                                         height: "58px",
-                                        // padding: '8px 16px',
                                         justifyContent: "center",
                                         alignItems: "center",
                                         gap: "83px",
                                         borderRadius: "8px",
-                                        // border: '1px solid #CFCBEA',
                                         background: "#EFEEF8",
                                         [`& .${selectClasses.indicator}`]: {
                                             transition: "0.2s",
@@ -397,8 +386,6 @@ export function AddNewGroupModal({ open, setOpen }) {
                                     <div
                                         style={{
                                             background: "#EFEEF8",
-                                            height: "140px",
-                                            marginTop: "-10px",
                                         }}
                                     >
                                         <Option
@@ -453,26 +440,23 @@ export function AddNewGroupModal({ open, setOpen }) {
                                         </Option>
                                     </div>
                                 </Select>
-                            </div>
+                            </ModalInputContainer>
 
-                            <div>
-                                <DemoLabels htmlFor="Surname">
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="Surname">
                                     Select room
-                                </DemoLabels>
+                                </ModalLabel>
                                 <Select
-                                    placeholder="Select days"
+                                    placeholder="Select room"
                                     d="Surname"
                                     indicator={<KeyboardArrowDown />}
                                     sx={{
-                                        width: "270px",
+                                        width: "250px",
                                         display: "flex",
                                         height: "58px",
-                                        // padding: '8px 16px',
                                         justifyContent: "center",
                                         alignItems: "center",
-                                        gap: "83px",
                                         borderRadius: "8px",
-                                        // border: '1px solid #CFCBEA',
                                         background: "#EFEEF8",
                                         [`& .${selectClasses.indicator}`]: {
                                             transition: "0.2s",
@@ -485,8 +469,7 @@ export function AddNewGroupModal({ open, setOpen }) {
                                     <div
                                         style={{
                                             background: "#EFEEF8",
-                                            height: "140px",
-                                            marginTop: "-10px",
+                                            padding: "0px !important",
                                         }}
                                     >
                                         <Option
@@ -539,7 +522,7 @@ export function AddNewGroupModal({ open, setOpen }) {
                                         </Option>
                                     </div>
                                 </Select>
-                            </div>
+                            </ModalInputContainer>
                             <LocalizationProvider dateAdapter={AdapterDateFns}>
                                 <DatePicker
                                     label="Select Date"
@@ -587,9 +570,52 @@ export function AddNewGroupModal({ open, setOpen }) {
                                 />
                             </LocalizationProvider>
                         </div>
+                        <div style={{ display: "flex", gap: "30px" }}>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="group-start-date">
+                                    Group start date
+                                </ModalLabel>
+
+                                <DatePicker
+                                    selected={startDate}
+                                    onChange={(date) => setStartDate(date)}
+                                    placeholderText="Select Date"
+                                    customInput={
+                                        <CustomDateButton $group>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z" fill="#2C2669"/>
+                                                <path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z" fill="black" fill-opacity="0.2"/>
+                                            </svg>
+                                            Select Date
+                                        </CustomDateButton>
+                                    }
+                                />
+                            </ModalInputContainer>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="group-start-date">
+                                    End date of the group
+                                </ModalLabel>
+
+                                <DatePicker
+                                    selected={startDate}
+                                    onChange={(date) => setStartDate(date)}
+                                    placeholderText="Select Date"
+                                    customInput={
+                                        <CustomDateButton  $group>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z" fill="#2C2669"/>
+                                                <path d="M9 1V3H15V1H17V3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H7V1H9ZM20 11H4V19H20V11ZM7 5H4V9H20V5H17V7H15V5H9V7H7V5Z" fill="black" fill-opacity="0.2"/>
+                                            </svg>
+                                            Select Date
+                                        </CustomDateButton>
+                                    }
+                                />
+                            </ModalInputContainer>
+                            
+                        </div>
                         <SendButton>Create Group</SendButton>
-                    </div>
-                </DemoLeftContainer>
+                    </AddTeacherModalBottom>
+                </AddTeacherModalStyle>
             </Modal>
         </div>
     );

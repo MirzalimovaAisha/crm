@@ -7,7 +7,7 @@ import History from './history';
 import { TeacherProfilePageContainer, TeacherProfileTabList, TeacherProfileTabListBtn } from '../teachers/style';
 import StudentProfile from './studentProfile';
 import { studentData } from '../mock/studentData';
-import { TablistButton } from './style';
+import { TablistButton } from '../students/style';
 import plus from '../../assets/plus-icon.svg';
 import { groupData } from '../mock/groupData';
 import { SendSmsModal } from './sendSmsModal';
@@ -47,62 +47,64 @@ function StudentInfo() {
     }
 
     return (
-        <TeacherProfilePageContainer>
-            <StudentProfile data={resultData} />
+        <div style={{display:"flex", justifyContent:"center"}}>
+            <TeacherProfilePageContainer>
+                <StudentProfile data={resultData} />
 
-            <div style={{display: 'flex'}}>
-                <TeacherProfileTabList>
-                    
-                    <TeacherProfileTabListBtn
-                        $first
-                        onClick={() => setPages("Groups")} 
-                        selected={pages === "Groups"}
-                    >
-                        Groups
-                    </TeacherProfileTabListBtn>
+                <div style={{display: 'flex'}}>
+                    <TeacherProfileTabList>
+                        
+                        <TeacherProfileTabListBtn
+                            $first
+                            onClick={() => setPages("Groups")} 
+                            selected={pages === "Groups"}
+                        >
+                            Groups
+                        </TeacherProfileTabListBtn>
 
-                    <TeacherProfileTabListBtn 
-                        onClick={() => setPages("Comment")} 
-                        selected={pages === "Comment"}
-                    >
-                        Comment
-                    </TeacherProfileTabListBtn>
+                        <TeacherProfileTabListBtn 
+                            onClick={() => setPages("Comment")} 
+                            selected={pages === "Comment"}
+                        >
+                            Comment
+                        </TeacherProfileTabListBtn>
 
-                    <TeacherProfileTabListBtn 
-                        onClick={() => setPages("SMS")} 
-                        selected={pages === "SMS"}
-                    >
-                        SMS
-                    </TeacherProfileTabListBtn>
+                        <TeacherProfileTabListBtn 
+                            onClick={() => setPages("SMS")} 
+                            selected={pages === "SMS"}
+                        >
+                            SMS
+                        </TeacherProfileTabListBtn>
 
-                    <TeacherProfileTabListBtn 
-                        $second
-                        $last
-                        onClick={() => setPages("History")} 
-                        selected={pages === "History"}
-                    >
-                        History
-                    </TeacherProfileTabListBtn>
-                </TeacherProfileTabList>
+                        <TeacherProfileTabListBtn 
+                            $second
+                            $last
+                            onClick={() => setPages("History")} 
+                            selected={pages === "History"}
+                        >
+                            History
+                        </TeacherProfileTabListBtn>
+                    </TeacherProfileTabList>
 
-                {
-                    pages === 'Comment' ? (
-                        <TablistButton onClick={() => setCreateCommentModal(true)}>
-                            <img src={plus} alt="" width={'16px'} />
-                            Leave a new comment
-                            <CreateCommentModal open={openCreateCommentModal} setOpen={handleCloseCommentModal} />
-                        </TablistButton>
-                    ) : pages === 'SMS' ? (
-                        <TablistButton onClick={() => setOpenSendSmsModal(true)}>
-                            <img src={plus} alt="" width={'16px'} />
-                            Send a new message
-                            <SendSmsModal open={openSendSmsModal} setOpen={handleCloseSmsModal} />
-                        </TablistButton>
-                    ) : null
-                }
-            </div>
-            {renderContent()}
-        </TeacherProfilePageContainer>
+                    {
+                        pages === 'Comment' ? (
+                            <TablistButton onClick={() => setCreateCommentModal(true)}>
+                                <img src={plus} alt="" width={'16px'} />
+                                Leave a new comment
+                                <CreateCommentModal open={openCreateCommentModal} setOpen={handleCloseCommentModal} />
+                            </TablistButton>
+                        ) : pages === 'SMS' ? (
+                            <TablistButton onClick={() => setOpenSendSmsModal(true)}>
+                                <img src={plus} alt="" width={'16px'} />
+                                Send a new message
+                                <SendSmsModal open={openSendSmsModal} setOpen={handleCloseSmsModal} />
+                            </TablistButton>
+                        ) : null
+                    }
+                </div>
+                {renderContent()}
+            </TeacherProfilePageContainer>
+        </div>
     )
 }
 

@@ -185,32 +185,6 @@ export const LoginContainerAnimation = styled.div`
     }
 `;
 
-export const DemoLabels = styled.div`
-    color: #6053b9;
-    font-family: "Public Sans";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 16px;
-    margin-bottom: 8px;
-`;
-
-export const DemoInputs = styled.input`
-    height: 58px;
-    border-radius: 8px;
-    border: 1px solid #cfcbea;
-    background: var(--100, var(--100, #efeef8));
-    width: 100%;
-    padding: 0 15px;
-    font-size: 18px;
-    &::placeholder {
-        font-size: 18px;
-        color: var(--200, #cfcbea);
-    }
-    &:focus {
-        outline-style: groove;
-    }
-`;
 
 export const SendButton = styled.button`
     border-radius: 6px;
@@ -438,7 +412,6 @@ export const LoginLeftLine = styled.div`
     width: 100%;
     height: 1px;
     background: #6053b952;
-    margin-top: 30px;
 `;
 
 export const LoginRight = styled.div`
@@ -450,11 +423,11 @@ export const LoginRight = styled.div`
 export const ForgotPasswordDiv = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 30px;
     gap: 2px;
     width: 50px;
     cursor: pointer;
     transition: all 0.3s;
+    color: #2C2669;
 
     &:hover{
         gap: 25px;

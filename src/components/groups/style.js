@@ -100,6 +100,10 @@ export const Thead = styled.thead`
     user-select: none;
 `;
 
+export const Tbody = styled.tbody`
+    color: #2C2669;
+`
+
 export const Tr = styled.tr`
     display: flex;
     &:hover {
@@ -133,6 +137,9 @@ export const Td = styled.td`
     align-items: center;
     gap: 12px;
     font-size: 14px;
+
+    color: ${(props)=> props.$purple ? "#6053B9" : "#2C2669"};
+    font-weight: ${(props)=> props.$bold ? "700" : "500"};
 `;
 
 export const NumberTd = styled.td`
@@ -152,9 +159,9 @@ export const NumberTd = styled.td`
 `;
 
 export const CircleIcon = styled.div`
-    width: 32px;
-    height: 32px;
-    background-color: #6200EA;
+    width: 40px;
+    height: 40px;
+    background-color: #A098D5;
     color: white;
     border-radius: 50%;
     display: flex;

@@ -2,6 +2,7 @@ import * as React from "react";
 import Modal from "@mui/joy/Modal";
 import ModalClose from "@mui/joy/ModalClose";
 import {
+    AddModalInput,
     AddNewTeacher,
     AddTeacherBtn,
     AddTeacherModalBottom,
@@ -13,6 +14,7 @@ import {
     SelectInput,
 } from "../teachers/style";
 import PhoneInput from "react-phone-input-2";
+import { SendButton } from "../home/style";
 
 function AddNewLeadModal({ open, setOpen }) {
     const [phone, setPhone] = React.useState("");
@@ -22,6 +24,7 @@ function AddNewLeadModal({ open, setOpen }) {
             <Modal
                 aria-labelledby="modal-title"
                 aria-describedby="modal-desc"
+                disableAutoFocus
                 open={open}
                 onClose={() => setOpen(false)}
                 sx={{
@@ -34,7 +37,7 @@ function AddNewLeadModal({ open, setOpen }) {
                     <AddTeacherModalTop>
                         <ModalClose sx={{ position: "absolute", mt: "-5px" }} />
                     </AddTeacherModalTop>
-                    <AddTeacherModalBottom style={{ height: "650px" }}>
+                    <AddTeacherModalBottom>
                         <AddNewTeacher>Add new lead</AddNewTeacher>
                         <ModalInputContainer>
                             <ModalLabel htmlFor="name">Lead name</ModalLabel>
@@ -48,11 +51,12 @@ function AddNewLeadModal({ open, setOpen }) {
                             <ModalLabel htmlFor="phone">
                                 Phone number
                             </ModalLabel>
-                            <PhoneInput
+                            <PhoneInput 
+                                className="phone"
                                 country={"us"}
                                 value={phone}
                                 onChange={(phone) => setPhone(phone)}
-                                inputStyle={{ width: "300px" }}
+                                inputStyle={{ width: "300px", overflow:"hidden" }}
                                 buttonStyle={{
                                     height: "58px",
                                     borderRadius: "8px 0 0 8px",
@@ -63,20 +67,16 @@ function AddNewLeadModal({ open, setOpen }) {
                         <ModalInputContainer>
                             <ModalLabel>Sections</ModalLabel>
                             <SelectInput id="section">
-                                <option value="1">Elementary</option>
-                                <option value="2">Beginner</option>
-                                <option value="3">Math</option>
+                                <option value="1">Sections</option>
                             </SelectInput>
                         </ModalInputContainer>
                         <ModalInputContainer>
                             <ModalLabel>From where</ModalLabel>
                             <SelectInput id="section">
-                                <option value="1">Telegram</option>
-                                <option value="2">Instagram</option>
-                                <option value="3">Other</option>
+                                <option value="1">From where</option>
                             </SelectInput>
                         </ModalInputContainer>
-                        <AddTeacherBtn>Create lead</AddTeacherBtn>
+                        <SendButton>Create lead</SendButton>
                     </AddTeacherModalBottom>
                 </AddTeacherModalStyle>
             </Modal>

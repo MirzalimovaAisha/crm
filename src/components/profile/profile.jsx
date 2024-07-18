@@ -1,43 +1,78 @@
-import React from 'react'
-import { Avatar, Block, CardSpaceBetween, EditProfileButton, EditProfileModal, ProfileCard, ProfileCardTop, ProfileContainer, UpdateProfileButton, Username } from './style'
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import React from "react";
+import {
+  Avatar,
+  Block,
+  CardSpaceBetween,
+  EditProfileButton,
+  EditProfileModal,
+  ProfileCard,
+  ProfileCardTop,
+  ProfileContainer,
+  Username,
+} from "./style";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import pencilIcon from '../../assets/pencil-icon.png'
-import avatar from '../../assets/avatar-profile.png'
+import pencilIcon from "../../assets/pencil-icon.png";
+import avatar from "../../assets/avatar-profile.png";
 
-import Modal from '@mui/joy/Modal';
-import ModalClose from '@mui/joy/ModalClose';
-import Typography from '@mui/joy/Typography';
-import Sheet from '@mui/joy/Sheet';
-import { DemoInputs, DemoLabels } from '../home/style';
+import Modal from "@mui/joy/Modal";
+import ModalClose from "@mui/joy/ModalClose";
+import Typography from "@mui/joy/Typography";
+import Sheet from "@mui/joy/Sheet";
+import { SendButton } from "../home/style";
 
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import {
+  AddNewTeacher,
+  AddTeacherModalBottom,
+  AddTeacherModalStyle,
+  AddTeacherModalTop,
+  ModalInput,
+  ModalInputContainer,
+  ModalLabel,
+  UploadPhoto,
+} from "../teachers/style";
 
 function Profile() {
-  const [phone, setPhone] = React.useState('');
+  const [phone, setPhone] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const [password, setPassword] = React.useState('');
+  const [password, setPassword] = React.useState("");
   const [showPassword, setShowPassword] = React.useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
+
+  const [fileName, setFileName] = React.useState("");
+  const [selectedDate, setSelectedDate] = React.useState(null);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFileName(file.name);
+    } else {
+      setFileName("");
+    }
+  };
   return (
     <ProfileContainer>
       <ProfileCard>
         <ProfileCardTop>
-          <EditProfileButton onClick={() => setOpen(true)}><img src={pencilIcon} alt="" />Edit profile</EditProfileButton>
+          <EditProfileButton onClick={() => setOpen(true)}>
+            <img src={pencilIcon} alt="" />
+            Edit profile
+          </EditProfileButton>
         </ProfileCardTop>
         <Avatar>
           <img src={avatar} alt="" />
         </Avatar>
 
-        <div style={{padding: "0 20px"}}>
+        <div style={{ padding: "0 20px" }}>
           <Username>Andrew Smith</Username>
           <Block>CEO</Block>
 
-          <CardSpaceBetween style={{marginTop: "20px"}}>
+          <CardSpaceBetween style={{ marginTop: "20px" }}>
             <p>Telegram:</p>
             <b>@andrewsmith</b>
           </CardSpaceBetween>
@@ -48,54 +83,118 @@ function Profile() {
         </div>
       </ProfileCard>
 
-
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-desc"
+        disableAutoFocus
         open={open}
         onClose={() => setOpen(false)}
-        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
       >
-        <Sheet
-          variant="outlined"
-          sx={{
-            width: "650px",
-            p: 3,
-            boxShadow: 'lg',
-            padding:"0"
-          }}
-        >
-          <ModalClose variant="plain" sx={{ m: 1 }} />
-          <Typography component="h2" id="modal-title" level="h4" textColor="inherit" fontWeight="lg" mb={1}></Typography>
+        <AddTeacherModalStyle>
+          <AddTeacherModalTop>
+            <ModalClose
+              variant="plain"
+              sx={{ position: "absolute", mt: "-5px" }}
+            />
+          </AddTeacherModalTop>
           <Typography id="modal-desc" textColor="text.tertiary">
-            <EditProfileModal>
-              <h1>Edit Profile</h1>
+            <AddTeacherModalBottom>
+              <AddNewTeacher>Edit Profile</AddNewTeacher>
 
-              <DemoLabels htmlFor='name'>Full name</DemoLabels>
-              <DemoInputs type='text' placeholder='Enter name' id='name' style={{marginTop: "8px", marginBottom: '30px'}}/>
+              <ModalInputContainer>
+                <ModalLabel htmlFor="name">Full name</ModalLabel>
+                <ModalInput type="text" placeholder="Enter name" id="name" />
+              </ModalInputContainer>
 
-              <DemoLabels htmlFor='photo'>Upload photo</DemoLabels>
-              <DemoInputs type='text' placeholder='Upload photo ' id='photo' style={{marginTop: "8px", marginBottom: '30px'}}/>
+              <ModalInputContainer
+                style={{ margin: "0", position: "relative" }}
+              >
+                <ModalLabel htmlFor="name">Uplaod photo</ModalLabel>
+                <UploadPhoto
+                  id="photo"
+                  type="file"
+                  onChange={handleFileChange}
+                />
+                <ModalInput
+                  id="photo"
+                  type="text"
+                  value={fileName}
+                  placeholder="Upload photo"
+                />
+              </ModalInputContainer>
 
-              <DemoLabels htmlFor='telegram'>Telegram username</DemoLabels>
-              <DemoInputs type='text' placeholder='Telegram username' id='telegram' style={{marginTop: "8px", marginBottom: '30px'}}/>
+              <ModalInputContainer>
+                <ModalLabel htmlFor="name">Telegram username</ModalLabel>
+                <ModalInput
+                  type="text"
+                  placeholder="Enter username"
+                  id="name"
+                />
+              </ModalInputContainer>
 
-              <DemoLabels style={{marginBottom: "8px"}}>Phone number</DemoLabels>
-              <PhoneInput country={'us'} value={phone} onChange={phone => setPhone(phone)} inputStyle={{ width: '300px' }} buttonStyle={{height: "58px",  borderRadius: "8px 0 0 8px", background: "#EFEEF8"}} />
+              <ModalInputContainer>
+                <ModalLabel>Phone number</ModalLabel>
+                <PhoneInput
+                  country={"us"}
+                  value={phone}
+                  onChange={(phone) => setPhone(phone)}
+                  inputStyle={{ width: "300px" }}
+                  buttonStyle={{
+                    height: "58px",
+                    borderRadius: "8px 0 0 8px",
+                    background: "#EFEEF8",
+                  }}
+                />
+              </ModalInputContainer>
 
-              <DemoLabels htmlFor='Password' style={{marginTop: "30px", marginBottom:"8px"}}>Password</DemoLabels>
-                <DemoInputs type={showPassword ? 'text' : 'password'} value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter password' id='Password' style={{position:"relative"}}/>
-                <div style={{marginTop: "-40px", marginLeft: "490px"}} >
-                  {showPassword ? <FaEyeSlash style={{transform: "scale(1.5)", cursor: "pointer"}} onClick={togglePasswordVisibility}/> : <FaEye style={{transform: "scale(1.5)", cursor: "pointer"}} onClick={togglePasswordVisibility}/>}
+              <ModalInputContainer>
+                <ModalLabel htmlFor="password">Password</ModalLabel>
+                <ModalInput
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter email address"
+                  id="Password"
+                  style={{ padding: "0px 50px 0px 16px" }}
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    display: "flex",
+                    justifyContent: "end",
+                    alignItems: "center",
+                    top: "43px",
+                    right: "20px",
+                  }}
+                >
+                  {showPassword ? (
+                    <FaEyeSlash
+                      style={{
+                        transform: "scale(1.5)",
+                        cursor: "pointer",
+                      }}
+                      onClick={togglePasswordVisibility}
+                    />
+                  ) : (
+                    <FaEye
+                      style={{
+                        transform: "scale(1.5)",
+                        cursor: "pointer",
+                      }}
+                      onClick={togglePasswordVisibility}
+                    />
+                  )}
                 </div>
+              </ModalInputContainer>
 
-              <UpdateProfileButton>Update profile</UpdateProfileButton>
-            </EditProfileModal>
+              <SendButton>Update profile</SendButton>
+            </AddTeacherModalBottom>
           </Typography>
-        </Sheet>
+        </AddTeacherModalStyle>
       </Modal>
     </ProfileContainer>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

@@ -14,6 +14,7 @@ import {
 import loginImage from "../../assets/login-image.png";
 import earthIcon from "../../assets/earth-icon.svg";
 import { Link } from "react-router-dom";
+import { ModalInput, ModalInputContainer, ModalLabel } from "../teachers/style";
 
 function ChangePassword() {
     const [password, setPassword] = useState("");
@@ -57,109 +58,107 @@ function ChangePassword() {
                     </div>
                 </div>
 
-                <div>
-                    <h1 style={{ marginBottom: "30px" }}>Change Password</h1>
-                    <p
-                        style={{
-                            marginTop: "-30px",
-                            opacity: "0.5",
-                            color: "black",
-                            marginBottom: "30px",
-                        }}
-                    >
-                        Please enter a new password for personal security
-                    </p>
-                    <DemoLabels htmlFor="email">New password</DemoLabels>
-                    <DemoInputs
-                        type={showPassword ? "text" : "password"}
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Enter email address"
-                        id="Password"
-                        style={{
-                            margin: "8px 0 30px 0",
-                            position: "relative",
-                            display: "flex",
-                            justifyContent: "end",
-                            paddingRight: "60px",
-                        }}
-                    />
-                    <div
-                        style={{
-                            position: "absolute",
-                            display: "flex",
-                            justifyContent: "end",
-                            width: "483px",
-                            alignItems: "center",
-                            marginTop: "-68px",
-                            marginLeft: "-20px",
-                        }}
-                    >
-                        {showPassword ? (
-                            <FaEyeSlash
-                                style={{
-                                    transform: "scale(1.5)",
-                                    cursor: "pointer",
-                                }}
-                                onClick={togglePasswordVisibility}
-                            />
-                        ) : (
-                            <FaEye
-                                style={{
-                                    transform: "scale(1.5)",
-                                    cursor: "pointer",
-                                }}
-                                onClick={togglePasswordVisibility}
-                            />
-                        )}
+                <div style={{display:"flex", flexDirection:"column", gap:"30px"}}>
+                    <div>
+                        <h1>Change Password</h1>
+                        <p
+                            style={{
+                                opacity: "0.5",
+                                color: "black",
+                            }}
+                        >
+                            Please enter a new password for personal security
+                        </p>
                     </div>
 
-                    <DemoLabels htmlFor="Password">
-                        Repeat new password
-                    </DemoLabels>
-                    <DemoInputs
-                        type={showPassword2 ? "text" : "password"}
-                        value={password2}
-                        onChange={(e) => setPassword2(e.target.value)}
-                        placeholder="Enter email address"
-                        id="Password"
-                        style={{
-                            margin: "8px 0 30px 0",
-                            position: "relative",
-                            display: "flex",
-                            justifyContent: "end",
-                            paddingRight: "60px",
-                        }}
-                    />
-                    <div
-                        style={{
-                            position: "absolute",
-                            display: "flex",
-                            justifyContent: "end",
-                            width: "483px",
-                            alignItems: "center",
-                            marginTop: "-68px",
-                            marginLeft: "-20px",
-                        }}
-                    >
-                        {showPassword2 ? (
-                            <FaEyeSlash
-                                style={{
-                                    transform: "scale(1.5)",
-                                    cursor: "pointer",
-                                }}
-                                onClick={togglePasswordVisibility2}
-                            />
-                        ) : (
-                            <FaEye
-                                style={{
-                                    transform: "scale(1.5)",
-                                    cursor: "pointer",
-                                }}
-                                onClick={togglePasswordVisibility2}
-                            />
-                        )}
-                    </div>
+                    <ModalInputContainer>
+                        <ModalLabel htmlFor="email">New password</ModalLabel>
+                        <ModalInput
+                            type={showPassword ? "text" : "password"}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Enter new password"
+                            id="Password"
+                            style={{
+                                position: "relative",
+                                display: "flex",
+                                justifyContent: "end",
+                                padding: "0px 50px 0px 16px" 
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                display: "flex",
+                                justifyContent: "end",
+                                top: "43px",
+                                right: "20px",
+                            }}
+                        >
+                            {showPassword ? (
+                                <FaEyeSlash
+                                    style={{
+                                        transform: "scale(1.5)",
+                                        cursor: "pointer",
+                                    }}
+                                    onClick={togglePasswordVisibility}
+                                />
+                            ) : (
+                                <FaEye
+                                    style={{
+                                        transform: "scale(1.5)",
+                                        cursor: "pointer",
+                                    }}
+                                    onClick={togglePasswordVisibility}
+                                />
+                            )}
+                        </div>
+                    </ModalInputContainer>
+
+
+                    <ModalInputContainer>
+                        <ModalLabel htmlFor="Password">
+                            Repeat new password
+                        </ModalLabel>
+                        <ModalInput
+                            type={showPassword2 ? "text" : "password"}
+                            value={password2}
+                            onChange={(e) => setPassword2(e.target.value)}
+                            placeholder="Repeat new password"
+                            id="Password"
+                            style={{
+                                position: "relative",
+                                display: "flex",
+                                justifyContent: "end",
+                                padding: "0px 50px 0px 16px"
+                            }}
+                        />
+                        <div
+                            style={{
+                                position: "absolute",
+                                top: "43px",
+                                right: "20px",
+                            }}
+                        >
+                            {showPassword2 ? (
+                                <FaEyeSlash
+                                    style={{
+                                        transform: "scale(1.5)",
+                                        cursor: "pointer",
+                                    }}
+                                    onClick={togglePasswordVisibility2}
+                                />
+                            ) : (
+                                <FaEye
+                                    style={{
+                                        transform: "scale(1.5)",
+                                        cursor: "pointer",
+                                    }}
+                                    onClick={togglePasswordVisibility2}
+                                />
+                            )}
+                        </div>
+                    </ModalInputContainer>
 
                     <Link to={"/"}>
                         <SendButton>Next</SendButton>

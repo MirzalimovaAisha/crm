@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import {
-    CheckboxContainer,
-    CheckboxLabel,
-    DropdownButton,
-    DropdownContent,
     GroupBox,
     GroupName,
-    HiddenCheckbox,
     PlusIcon,
     SearchIcon,
     SearchInput,
     StudentName,
-    StyledCheckbox,
     TelNumber,
 } from "./style";
 import {

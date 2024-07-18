@@ -22,6 +22,7 @@ import "react-phone-input-2/lib/style.css";
 import phoneIcon from "../../assets/phone-icon.png";
 import mailIcon from "../../assets/mail-icon.png";
 import { Link } from "react-router-dom";
+import { ModalInput, ModalInputContainer, ModalLabel } from "../teachers/style";
 
 function Demo() {
     const [phone, setPhone] = useState("");
@@ -49,30 +50,30 @@ function Demo() {
                                         gap: "30px",
                                     }}
                                 >
-                                    <div>
-                                        <DemoLabels htmlFor="name">Name</DemoLabels>
-                                        <DemoInputs
+                                    <ModalInputContainer>
+                                        <ModalLabel htmlFor="name">Name</ModalLabel>
+                                        <ModalInput
                                             id="name"
                                             placeholder="Enter name"
                                             type="text"
                                         />
-                                    </div>
+                                    </ModalInputContainer>
 
-                                    <div>
-                                        <DemoLabels htmlFor="Surname">
+                                    <ModalInputContainer>
+                                        <ModalLabel htmlFor="Surname">
                                             Surname
-                                        </DemoLabels>
-                                        <DemoInputs
+                                        </ModalLabel>
+                                        <ModalInput
                                             id="Surname"
                                             placeholder="Enter surname"
                                             type="text"
                                         />
-                                    </div>
+                                    </ModalInputContainer>
 
-                                    <div>
-                                        <DemoLabels htmlFor="phone">
+                                    <ModalInputContainer>
+                                        <ModalLabel htmlFor="phone">
                                             Phone number
-                                        </DemoLabels>
+                                        </ModalLabel>
                                         <PhoneInput
                                             country={"us"}
                                             value={phone}
@@ -84,27 +85,27 @@ function Demo() {
                                                 background: "#EFEEF8",
                                             }}
                                         />
-                                    </div>
+                                    </ModalInputContainer>
 
-                                    <div>
-                                        <DemoLabels htmlFor="Email">Email</DemoLabels>
-                                        <DemoInputs
+                                    <ModalInputContainer>
+                                        <ModalLabel htmlFor="Email">Email</ModalLabel>
+                                        <ModalInput
                                             id="Email"
                                             placeholder="Enter email"
                                             type="email"
                                         />
-                                    </div>
+                                    </ModalInputContainer>
 
-                                    <div>
-                                        <DemoLabels htmlFor="company">
+                                    <ModalInputContainer>
+                                        <ModalLabel htmlFor="company">
                                             Company name
-                                        </DemoLabels>
-                                        <DemoInputs
+                                        </ModalLabel>
+                                        <ModalInput
                                             id="company"
                                             placeholder="Enter company name"
                                             type="text"
                                         />
-                                    </div>
+                                    </ModalInputContainer>
 
                                     <Link
                                         to={"/profile"}

@@ -1,36 +1,8 @@
-// import * as React from 'react'
-// import Modal from '@mui/joy/Modal'
-// import ModalClose from '@mui/joy/ModalClose'
-// import { AddNewTeacher, AddTeacherBtn, AddTeacherModalBottom, AddTeacherModalStyle, AddTeacherModalTop, ModalInput, ModalInputContainer, ModalLabel, SelectInput } from '../teachers/style' 
-
-// function SendSmsModal({ open, setOpen }) {
-//   return (
-//     <div>
-//       <Modal aria-labelledby="modal-title" aria-describedby="modal-desc" open={open} onClose={() => setOpen(false)} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-//         <AddTeacherModalStyle>
-//             <AddTeacherModalTop>
-//                 <ModalClose sx={{position: 'absolute', mt: '-5px'}}/>
-//             </AddTeacherModalTop>
-//             <AddTeacherModalBottom style={{height: "362px"}}>
-//                 <AddNewTeacher>Send SMS</AddNewTeacher>
-//                 <ModalInputContainer>
-//                     <textarea name="" id="" placeholder='Enter Message' style={{zIndex: "10000000000000000000000000", height: "151px", resize: "none", padding: "8px 16px", borderRadius: "8px", border: "1px solid #CFCBEA", background: "#EFEEF8"}}></textarea>
-//                 </ModalInputContainer>
-                
-//                 <AddTeacherBtn>Send</AddTeacherBtn>
-//             </AddTeacherModalBottom>
-//         </AddTeacherModalStyle>
-//       </Modal>
-//     </div>
-//   )
-// }
-
-// export default SendSmsModal
-
 import * as React from 'react';
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
-import { AddNewTeacher, AddTeacherBtn, AddTeacherModalBottom, AddTeacherModalStyle, AddTeacherModalTop, ModalInputContainer, SmsTemplateBox, SmsTemplateWrapper } from '../teachers/style';
+import { AddNewTeacher, AddTeacherModalBottom, AddTeacherModalStyle, AddTeacherModalTop, ModalInputContainer, SmsTemplateBox, SmsTemplateWrapper } from '../teachers/style';
+import { SendButton } from '../home/style';
 
 function SendSmsModal({ open, setOpen }) {
   return (
@@ -38,6 +10,7 @@ function SendSmsModal({ open, setOpen }) {
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-desc"
+        disableAutoFocus
         open={open}
         onClose={() => setOpen(false)}
         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
@@ -65,7 +38,7 @@ function SendSmsModal({ open, setOpen }) {
                 }}
               ></textarea>
             </ModalInputContainer>
-            <AddTeacherBtn>Send</AddTeacherBtn>
+            <SendButton>Send</SendButton>
 
             <AddNewTeacher style={{marginTop: "40px"}}>SMS Templates</AddNewTeacher>
             <SmsTemplateWrapper>

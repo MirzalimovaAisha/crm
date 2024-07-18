@@ -166,28 +166,17 @@ export const StyledCheckbox = styled.div`
     }
 `;
 
-export const GenderForm = styled.form`
-    color: #A098D5;
-    font-family: "Public Sans";
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
-`;
-
-export const GenderOptions = styled.div`
-    margin: 15px 0;
-    display: flex;
-    gap: 40px;
-`;
 
 export const GenderOption = styled.label`
     display: flex;
     align-items: center;
+    color: var(--400, #A098D5);
+    font-size: 14px;
+    font-weight: 500;
+    gap: 8px;
 `;
 
 export const RadioInput = styled.input`
-    margin-right: 8px; 
     cursor: pointer;
 `;
 

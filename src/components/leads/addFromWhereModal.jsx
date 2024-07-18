@@ -3,7 +3,6 @@ import Modal from "@mui/joy/Modal";
 import ModalClose from "@mui/joy/ModalClose";
 import {
     AddNewTeacher,
-    AddTeacherBtn,
     AddTeacherModalBottom,
     AddTeacherModalStyle,
     AddTeacherModalTop,
@@ -11,6 +10,7 @@ import {
     ModalInputContainer,
     ModalLabel,
 } from "../teachers/style";
+import { SendButton } from "../home/style";
 
 function AddFromWhereModal({ open, setOpen }) {
     return (
@@ -18,6 +18,7 @@ function AddFromWhereModal({ open, setOpen }) {
             <Modal
                 aria-labelledby="modal-title"
                 aria-describedby="modal-desc"
+                disableAutoFocus
                 open={open}
                 onClose={() => setOpen(false)}
                 sx={{
@@ -43,7 +44,7 @@ function AddFromWhereModal({ open, setOpen }) {
                             />
                         </ModalInputContainer>
 
-                        <AddTeacherBtn>Create from where</AddTeacherBtn>
+                        <SendButton>Create from where</SendButton>
                     </AddTeacherModalBottom>
                 </AddTeacherModalStyle>
             </Modal>

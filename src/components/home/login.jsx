@@ -16,6 +16,7 @@ import {
 import loginImage from "../../assets/login-image.png";
 import earthIcon from "../../assets/earth-icon.svg";
 import { Link } from "react-router-dom";
+import { AddNewTeacher, ModalInput, ModalInputContainer, ModalLabel } from "../teachers/style";
 
 function Login() {
     const [password, setPassword] = useState("");
@@ -56,60 +57,57 @@ function Login() {
                             </div>
                         </div>
 
-                        <div>
-                            <h1 style={{ marginBottom: "30px" }}>Sign In</h1>
-                            <DemoLabels htmlFor="email">Email</DemoLabels>
-                            <DemoInputs
-                                type="email"
-                                placeholder="Enter email address"
-                                id="email"
-                                style={{ margin: "8px 0 30px 0" }}
-                            />
+                        <div style={{display:"flex", flexDirection:"column", gap:"30px"}}>
+                            <h1>Sign In</h1>
 
-                            <DemoLabels htmlFor="Password">Password</DemoLabels>
-                            <DemoInputs
-                                type={showPassword ? "text" : "password"}
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Enter password"
-                                id="Password"
-                                style={{
-                                    margin: "8px 0 30px 0",
-                                    position: "relative",
-                                    display: "flex",
-                                    justifyContent: "end",
-                                    paddingRight: "60px",
-                                }}
-                            />
-                            <div
-                                style={{
-                                    position: "absolute",
-                                    display: "flex",
-                                    justifyContent: "end",
-                                    width: "483px",
-                                    alignItems: "center",
-                                    marginTop: "-68px",
-                                    marginLeft: "-20px",
-                                }}
-                            >
-                                {showPassword ? (
-                                    <FaEyeSlash
-                                        style={{
-                                            transform: "scale(1.5)",
-                                            cursor: "pointer",
-                                        }}
-                                        onClick={togglePasswordVisibility}
-                                    />
-                                ) : (
-                                    <FaEye
-                                        style={{
-                                            transform: "scale(1.5)",
-                                            cursor: "pointer",
-                                        }}
-                                        onClick={togglePasswordVisibility}
-                                    />
-                                )}
-                            </div>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="email">Email</ModalLabel>
+                                <ModalInput
+                                    type="email"
+                                    placeholder="Enter email address"
+                                    id="email"
+                                />
+                            </ModalInputContainer>
+
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="Password">Password</ModalLabel>
+                                <ModalInput
+                                    type={showPassword ? "text" : "password"}
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    placeholder="Enter password"
+                                    id="Password"
+                                    style={{
+                                        position: "relative",
+                                        padding: "0px 50px 0px 16px"
+                                    }}
+                                />
+                                <div
+                                    style={{
+                                        position: "absolute",
+                                        top: "43px",
+                                        right: "20px",
+                                    }}
+                                >
+                                    {showPassword ? (
+                                        <FaEyeSlash
+                                            style={{
+                                                transform: "scale(1.5)",
+                                                cursor: "pointer",
+                                            }}
+                                            onClick={togglePasswordVisibility}
+                                        />
+                                    ) : (
+                                        <FaEye
+                                            style={{
+                                                transform: "scale(1.5)",
+                                                cursor: "pointer",
+                                            }}
+                                            onClick={togglePasswordVisibility}
+                                        />
+                                    )}
+                                </div>
+                            </ModalInputContainer>
 
                             <Link
                                 to={"/profile"}
@@ -124,7 +122,6 @@ function Login() {
                                 style={{
                                     display: "flex",
                                     alignItems: "center",
-                                    marginTop: "30px",
                                     justifyContent: "space-between",
                                 }}
                             >

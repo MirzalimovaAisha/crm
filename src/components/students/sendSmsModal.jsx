@@ -1,8 +1,8 @@
 import * as React from 'react'
 import Modal from '@mui/joy/Modal'
 import ModalClose from '@mui/joy/ModalClose'
-import { DemoInputs, DemoLabels, DemoLeftContainer, SendButton } from '../home/style'
-import { AddNewTeacher, AddTeacherModalTop } from '../teachers/style'
+import { DemoLeftContainer, SendButton } from '../home/style'
+import { AddNewTeacher, AddTeacherModalTop, ModalInput, ModalLabel } from '../teachers/style'
 
 export function SendSmsModal({ open, setOpen }) {
     return (
@@ -20,8 +20,8 @@ export function SendSmsModal({ open, setOpen }) {
                     <AddNewTeacher style={{margin: '30px 0'}}>Send SMS</AddNewTeacher>
                     <div style={{display: "flex", flexDirection: "column", gap: "30px"}}>
                         <div>
-                            <DemoLabels htmlFor='name'>Full name</DemoLabels>
-                            <DemoInputs id='name' placeholder='Enter message' type='text' style={{height: '250px'}}/>
+                            <ModalLabel htmlFor='name'>Full name</ModalLabel>
+                            <ModalInput id='name' placeholder='Enter message' type='text' style={{height: '250px'}}/>
                         </div>
                         <SendButton>Send</SendButton>
                     </div>

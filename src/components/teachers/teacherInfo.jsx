@@ -32,32 +32,34 @@ function TeacherInfo() {
     }
 
     return (
-        <TeacherProfilePageContainer>
-            <TeacherProfileTabList>
-                <TeacherProfileTabListBtn 
-                    $first
-                    onClick={() => setPages("profile")} 
-                    selected={pages === "profile"}
-                >
-                    Profile
-                </TeacherProfileTabListBtn>
-                <TeacherProfileTabListBtn 
-                    onClick={() => setPages("groups")} 
-                    selected={pages === "groups"}
-                >
-                    Groups
-                </TeacherProfileTabListBtn>
-                <TeacherProfileTabListBtn 
-                    $second
-                    $last
-                    onClick={() => setPages("salary")} 
-                    selected={pages === "salary"}
-                >
-                    Salary
-                </TeacherProfileTabListBtn>
-            </TeacherProfileTabList>
-            {renderContent()}
-        </TeacherProfilePageContainer>
+        <div style={{display:"flex", justifyContent:"center"}}>
+            <TeacherProfilePageContainer>
+                <TeacherProfileTabList>
+                    <TeacherProfileTabListBtn 
+                        $first
+                        onClick={() => setPages("profile")} 
+                        selected={pages === "profile"}
+                    >
+                        Profile
+                    </TeacherProfileTabListBtn>
+                    <TeacherProfileTabListBtn 
+                        onClick={() => setPages("groups")} 
+                        selected={pages === "groups"}
+                    >
+                        Groups
+                    </TeacherProfileTabListBtn>
+                    <TeacherProfileTabListBtn 
+                        $second
+                        $last
+                        onClick={() => setPages("salary")} 
+                        selected={pages === "salary"}
+                    >
+                        Salary
+                    </TeacherProfileTabListBtn>
+                </TeacherProfileTabList>
+                {renderContent()}
+            </TeacherProfilePageContainer>
+        </div>
     )
 }
 

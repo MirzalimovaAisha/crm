@@ -6,7 +6,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 import addIcon from '../../assets/add-icon.svg';
-import moreIcon from '../../assets/more-icon.svg';
+import moreIcon from '../../assets/moreLength.svg';
 import editicon from '../../assets/edit-icon.svg';
 import deleteIcon from '../../assets/delete-icon.svg';
 import chatIcon from '../../assets/chat-icon.svg'

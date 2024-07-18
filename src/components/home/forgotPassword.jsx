@@ -18,6 +18,7 @@ import earthIcon from "../../assets/earth-icon.svg";
 
 import leftArrow from "../../assets/left-arrow.png";
 import { Link } from "react-router-dom";
+import { ModalInput, ModalInputContainer, ModalLabel } from "../teachers/style";
 
 function ForgotPasswordComponent() {
     return (
@@ -49,15 +50,17 @@ function ForgotPasswordComponent() {
                             </div>
                         </div>
 
-                        <div>
-                            <h1 style={{ marginBottom: "30px" }}>Forgot password</h1>
-                            <DemoLabels htmlFor="email">Email</DemoLabels>
-                            <DemoInputs
-                                type="email"
-                                placeholder="Enter email address"
-                                id="email"
-                                style={{ margin: "8px 0 30px 0" }}
-                            />
+                        <div style={{display:"flex", flexDirection:"column", gap:"30px"}}>
+                            <h1>Forgot password</h1>
+
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="email">Email</ModalLabel>
+                                <ModalInput
+                                    type="email"
+                                    placeholder="Enter email address"
+                                    id="email"
+                                />
+                            </ModalInputContainer>
 
                             <Link to={"/login/change-password"}>
                                 <SendButton>Send</SendButton>
@@ -65,10 +68,10 @@ function ForgotPasswordComponent() {
 
                             <LoginLeftLine />
 
-                            <Link to={"/login"} style={{ textDecoration: "none" }}>
+                            <Link to={"/login"} style={{ width:"fit-content" }}>
                                 <ForgotPasswordDiv>
                                     <img src={leftArrow} alt="" />
-                                    <p style={{ color: "black" }}>Back</p>
+                                    <p>Back</p>
                                 </ForgotPasswordDiv>
                             </Link>
                         </div>

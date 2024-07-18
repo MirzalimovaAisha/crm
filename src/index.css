@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-  font-family: "Public Sans";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Public Sans";
 }
-body{
-  background: #EFEEF8;
-  height: 100%;
+body {
+    background: #efeef8;
+    height: 100%;
 }
 
 /* html, body {
@@ -19,78 +19,110 @@ body{
 } */
 
 .form-control {
-  font-size: 20px !important;
-  height: 58px !important;
-  width: 100% !important;
-  background: #EFEEF8 !important;
-  border-radius: 8px !important;
-  padding-left: 70px !important;
+    font-size: 20px !important;
+    height: 58px !important;
+    width: 100% !important;
+    background: #efeef8 !important;
+    border-radius: 8px !important;
+    padding-left: 70px !important;
 }
 
 .react-tel-input .selected-flag {
-  width: 60px !important;
-  padding: 15px !important;
+    width: 60px !important;
+    padding: 15px !important;
 }
 
 .react-tel-input .flag-dropdown {
-  border-right: none !important;
+    border-right: none !important;
 }
 
 .react-tel-input .flag {
-  transform: scale(2) !important;
+    transform: scale(2) !important;
 }
 
 /* Accordion */
 .css-x2o9yg-JoyAccordionGroup-root {
-  gap: 10px !important;
+    gap: 10px !important;
 }
 
 .css-1twr7re-JoyAccordionSummary-button {
-  height: 64px !important;
-  border-radius: 6px !important;
-  border: 1px solid var(--300, #BFBAE3) !important;
+    height: 64px !important;
+    border-radius: 6px !important;
+    border: 1px solid var(--300, #bfbae3) !important;
 }
 
 .css-x2o9yg-JoyAccordionGroup-root .MuiAccordion-root:not([data-last-child]) {
-  border: none;
+    border: none;
 }
 
 .css-m65nqi-JoyAccordionDetails-root {
-  border: 1px solid #BFBAE3 !important;
-  border-top: none;
-  border-radius: 0 0 6px 6px !important;
-  margin-top: -5px;
-  background: red !important;
+    border: 1px solid #bfbae3 !important;
+    border-top: none;
+    border-radius: 0 0 6px 6px !important;
+    margin-top: -5px;
+    background: red !important;
 }
 
 .css-m65nqi-JoyAccordionDetails-root:not(.Mui-expanded) {
-  border: none;
+    border: none;
 }
 
 .css-1r2bn3-JoySvgIcon-root {
-  margin-right: 22px !important;
-  color: #BFBAE3 !important;
+    margin-right: 22px !important;
+    color: #bfbae3 !important;
 }
 
 .css-q7gy78-JoyAccordionSummary-indicator.Mui-expanded {
-  margin-right: 22px !important;
+    margin-right: 22px !important;
 }
 
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
-  gap: 10px !important;
-  color: #6053B9 !important;
-  font-family: "Public Sans" !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
+    gap: 10px !important;
+    color: #6053b9 !important;
+    font-family: "Public Sans" !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
 }
-.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
-  border-radius: 10px !important;
-  box-shadow: 0px 0px 10px 2px rgba(66, 84, 102, 0.20) !important;
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper {
+    border-radius: 10px !important;
+    box-shadow: 0px 0px 10px 2px rgba(66, 84, 102, 0.2) !important;
+    background:#ffffffc9 !important;
+    font-size: 14px !important;
 }
-.css-6hp17o-MuiList-root-MuiMenu-list  {
-  min-width: 0 !important;
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    min-width: 0 !important;
 }
 
 .css-jb2345-JoyAccordionDetails-content {
-  gap: 10px;
+    gap: 10px;
+}
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked,
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.MuiCheckbox-indeterminate {
+    color: #6053b9 !important;
+}
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  color: #A098D5 !important;
+}
+
+
+/* radio */
+.css-1hbvpl3-MuiSvgIcon-root,
+.css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked{
+    color: #A098D5 !important;
+}
+  
+
+
+
+
+.react-tel-input .selected-flag:hover, .react-tel-input .selected-flag:focus{
+    background: none !important
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

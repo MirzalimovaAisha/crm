@@ -1,5 +1,5 @@
 import React from 'react'
-import moreImg from '../../assets/moreLength.png'
+import moreImg from '../../assets/moreLength.svg'
 import editIcon from '../../assets/edit-icon.svg'
 import smsIcon from '../../assets/sms-icon.svg'
 import DeleteIcon from '../../assets/delete-icon.svg'
@@ -42,7 +42,7 @@ function TeacherProfile({ data }) {
                     : <TeacherProfileCardImgName>{initials}</TeacherProfileCardImgName>
                 }
                     <img 
-                        src={moreImg} 
+                        src={moreImg}
                         alt="profile img" 
                         style={{
                             width: "25px",

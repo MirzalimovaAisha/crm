@@ -1,8 +1,8 @@
 import * as React from 'react'
 import Modal from '@mui/joy/Modal'
 import ModalClose from '@mui/joy/ModalClose'
-import { DemoInputs, DemoLeftContainer, SendButton } from '../home/style'
-import { AddNewTeacher, AddTeacherModalTop } from '../teachers/style'
+import {  DemoLeftContainer, SendButton } from '../home/style'
+import { AddNewTeacher, AddTeacherModalTop, ModalInput } from '../teachers/style'
 
 export function CreateCommentModal({ open, setOpen }) {
     return (
@@ -20,7 +20,7 @@ export function CreateCommentModal({ open, setOpen }) {
                     <AddNewTeacher style={{margin: '30px 0'}}>Create Comment</AddNewTeacher>
                     <div style={{display: "flex", flexDirection: "column", gap: "30px"}}>
                         <div>
-                            <DemoInputs id='name' placeholder='Enter comment' type='text' style={{height: '250px'}}/>
+                            <ModalInput id='name' placeholder='Enter comment' type='text' style={{height: '250px'}}/>
                         </div>
                         <SendButton>Create comment</SendButton>
                     </div>
