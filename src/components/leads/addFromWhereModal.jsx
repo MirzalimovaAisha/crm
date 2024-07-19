@@ -31,7 +31,7 @@ function AddFromWhereModal({ open, setOpen }) {
                     <AddTeacherModalTop>
                         <ModalClose sx={{ position: "absolute", mt: "-5px" }} />
                     </AddTeacherModalTop>
-                    <AddTeacherModalBottom style={{ height: "362px" }}>
+                    <AddTeacherModalBottom>
                         <AddNewTeacher>Add from where</AddNewTeacher>
                         <ModalInputContainer>
                             <ModalLabel htmlFor="name">

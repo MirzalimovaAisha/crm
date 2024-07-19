@@ -31,7 +31,7 @@ function AddSectionModal({ open, setOpen }) {
                     <AddTeacherModalTop>
                         <ModalClose sx={{ position: "absolute", mt: "-5px" }} />
                     </AddTeacherModalTop>
-                    <AddTeacherModalBottom style={{ height: "362px" }}>
+                    <AddTeacherModalBottom>
                         <AddNewTeacher>Add section</AddNewTeacher>
                         <ModalInputContainer>
                             <ModalLabel htmlFor="name">Section name</ModalLabel>

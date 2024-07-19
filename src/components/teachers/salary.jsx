@@ -11,21 +11,23 @@ function Salary({ incomeData, exprenseData }) {
     return (
         <div>
             <TeacherProfileTabList style={{marginBottom: '50px'}}>
-                <TeacherProfileTabListBtn
-                    $first
-                    onClick={() => setPages("income")} 
-                    selected={pages === "income"}
-                >
-                    Income
-                </TeacherProfileTabListBtn>
-                <TeacherProfileTabListBtn 
-                    $second
-                    $last
-                    onClick={() => setPages("expense")} 
-                    selected={pages === "expense"}
-                >
-                    Expense
-                </TeacherProfileTabListBtn>
+                <div style={{display:"flex"}}>
+                    <TeacherProfileTabListBtn
+                        $first
+                        onClick={() => setPages("income")} 
+                        selected={pages === "income"}
+                    >
+                        Income
+                    </TeacherProfileTabListBtn>
+                    <TeacherProfileTabListBtn 
+                        $second
+                        $last
+                        onClick={() => setPages("expense")} 
+                        selected={pages === "expense"}
+                    >
+                        Expense
+                    </TeacherProfileTabListBtn>
+                </div>
             </TeacherProfileTabList>
             <Table>
                 {pages === "income" ? (

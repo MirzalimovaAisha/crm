@@ -334,7 +334,7 @@ export const TeacherProfileCardBottomText = styled.div`
 
 // Groups
 export const GroupsContainer = styled.div`
-    width: 50%;
+    /* width: 50%; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 50px;

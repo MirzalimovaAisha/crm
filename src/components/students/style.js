@@ -222,7 +222,7 @@ export const AddButton = styled.button`
 `;
 
 export const TablistButton = styled.button`
-    width: 300px;
+    /* width: 300px; */
     display: flex;
     padding: 14px 20px;
     align-items: center;
