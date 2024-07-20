@@ -5,9 +5,9 @@ import Comment from "./comment";
 import Sms from "./sms";
 import History from "./history";
 import {
-    TeacherProfilePageContainer,
-    TeacherProfileTabList,
-    TeacherProfileTabListBtn,
+  TeacherProfilePageContainer,
+  TeacherProfileTabList,
+  TeacherProfileTabListBtn,
 } from "../teachers/style";
 import StudentProfile from "./studentProfile";
 import { studentData } from "../mock/studentData";
@@ -18,110 +18,102 @@ import { SendSmsModal } from "./sendSmsModal";
 import { CreateCommentModal } from "./createCommentModal";
 
 function StudentInfo() {
-    const { id } = useParams();
-    const resultData = studentData.maindata.find(
-        (value) => value.id === parseInt(id)
-    );
-    const [openCreateCommentModal, setCreateCommentModal] =
-        React.useState(false);
-    const [openSendSmsModal, setOpenSendSmsModal] = React.useState(false);
+  const { id } = useParams();
+  const resultData = studentData.maindata.find(
+    (value) => value.id === parseInt(id)
+  );
+  const [openCreateCommentModal, setCreateCommentModal] = React.useState(false);
+  const [openSendSmsModal, setOpenSendSmsModal] = React.useState(false);
 
-    const handleCloseCommentModal = (event) => {
-        event.stopPropagation();
-        setCreateCommentModal(false);
-    };
+  const handleCloseCommentModal = (event) => {
+    event.stopPropagation();
+    setCreateCommentModal(false);
+  };
 
-    const handleCloseSmsModal = (event) => {
-        event.stopPropagation();
-        setOpenSendSmsModal(false);
-    };
+  const handleCloseSmsModal = (event) => {
+    event.stopPropagation();
+    setOpenSendSmsModal(false);
+  };
 
-    const data = groupData.maindata;
-    const [pages, setPages] = useState("Groups");
+  const data = groupData.maindata;
+  const [pages, setPages] = useState("Groups");
 
-    const renderContent = () => {
-        if (pages === "Groups") {
-            return <StudentGroups data={data} />;
-        } else if (pages === "Comment") {
-            return <Comment data={data} />;
-        } else if (pages === "SMS") {
-            return <Sms data={data} />;
-        } else if (pages === "History") {
-            return <History data={resultData} />;
-        } else {
-            return null;
-        }
-    };
+  const renderContent = () => {
+    if (pages === "Groups") {
+      return <StudentGroups data={data} />;
+    } else if (pages === "Comment") {
+      return <Comment data={data} />;
+    } else if (pages === "SMS") {
+      return <Sms data={data} />;
+    } else if (pages === "History") {
+      return <History data={resultData} />;
+    } else {
+      return null;
+    }
+  };
 
-    return (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-            <TeacherProfilePageContainer>
-                <StudentProfile data={resultData} />
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <TeacherProfilePageContainer>
+        <StudentProfile data={resultData} />
 
-                {/* <div style={{ display: "flex" }}> */}
-                    <TeacherProfileTabList>
-                        <div style={{ display: "flex" }}>
-                            <TeacherProfileTabListBtn
-                                $first
-                                onClick={() => setPages("Groups")}
-                                selected={pages === "Groups"}
-                            >
-                                Groups
-                            </TeacherProfileTabListBtn>
+        <div style={{ display: "flex", justifyContent:"space-between" }}>
+          <TeacherProfileTabList>
+            <TeacherProfileTabListBtn
+              $first
+              onClick={() => setPages("Groups")}
+              selected={pages === "Groups"}
+            >
+              Groups
+            </TeacherProfileTabListBtn>
 
-                            <TeacherProfileTabListBtn
-                                onClick={() => setPages("Comment")}
-                                selected={pages === "Comment"}
-                            >
-                                Comment
-                            </TeacherProfileTabListBtn>
+            <TeacherProfileTabListBtn
+              onClick={() => setPages("Comment")}
+              selected={pages === "Comment"}
+            >
+              Comment
+            </TeacherProfileTabListBtn>
 
-                            <TeacherProfileTabListBtn
-                                onClick={() => setPages("SMS")}
-                                selected={pages === "SMS"}
-                            >
-                                SMS
-                            </TeacherProfileTabListBtn>
+            <TeacherProfileTabListBtn
+              onClick={() => setPages("SMS")}
+              selected={pages === "SMS"}
+            >
+              SMS
+            </TeacherProfileTabListBtn>
 
-                            <TeacherProfileTabListBtn
-                                $second
-                                $last
-                                onClick={() => setPages("History")}
-                                selected={pages === "History"}
-                            >
-                                History
-                            </TeacherProfileTabListBtn>
-                        </div>
-                        {pages === "Comment" ? (
-                            <TablistButton
-                                onClick={() => setCreateCommentModal(true)}
-                            >
-                                <img src={plus} alt="" width={"16px"} />
-                                Leave a new comment
-                                <CreateCommentModal
-                                    open={openCreateCommentModal}
-                                    setOpen={handleCloseCommentModal}
-                                />
-                            </TablistButton>
-                        ) : pages === "SMS" ? (
-                            <TablistButton
-                                onClick={() => setOpenSendSmsModal(true)}
-                            >
-                                <img src={plus} alt="" width={"16px"} />
-                                Send a new message
-                                <SendSmsModal
-                                    open={openSendSmsModal}
-                                    setOpen={handleCloseSmsModal}
-                                />
-                            </TablistButton>
-                        ) : null}
-                    </TeacherProfileTabList>
-
-                {/* </div> */}
-                {renderContent()}
-            </TeacherProfilePageContainer>
+            <TeacherProfileTabListBtn
+              $second
+              $last
+              onClick={() => setPages("History")}
+              selected={pages === "History"}
+            >
+              History
+            </TeacherProfileTabListBtn>
+          </TeacherProfileTabList>
+        {pages === "Comment" ? (
+            <TablistButton onClick={() => setCreateCommentModal(true)}>
+            <img src={plus} alt="" width={"16px"} />
+            Leave a new comment
+            <CreateCommentModal
+              open={openCreateCommentModal}
+              setOpen={handleCloseCommentModal}
+              />
+          </TablistButton>
+        ) : pages === "SMS" ? (
+            <TablistButton onClick={() => setOpenSendSmsModal(true)}>
+            <img src={plus} alt="" width={"16px"} />
+            Send a new message
+            <SendSmsModal
+              open={openSendSmsModal}
+              setOpen={handleCloseSmsModal}
+              />
+          </TablistButton>
+        ) : null}
         </div>
-    );
+        {renderContent()}
+      </TeacherProfilePageContainer>
+    </div>
+  );
 }
 
 export default StudentInfo;

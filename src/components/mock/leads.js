@@ -28,7 +28,7 @@ export const LeadsData = {
                 name: "Ravshanjon",
                 photo: ``,
                 phoneNumber: '99 811 11 58',
-                fromWhere: "",
+                fromWhere: "Xolasi orqali",
                 section: "Beginer"
             }
         },

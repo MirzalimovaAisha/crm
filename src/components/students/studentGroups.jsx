@@ -66,10 +66,11 @@ function StudentGroups({ data }) {
             <Table style={{width: '980px'}}>
                 <Thead>
                     <Tr $hoverNone>
-                        <Th style={{width: '180px', marginLeft: '80px'}}>Date</Th>
-                        <Th style={{width: '200px'}}>Amount</Th>
-                        <Th style={{width: '300px'}}>Groups</Th>
-                        <Th style={{width: '90px'}}>Receiver</Th>
+                        <Th style={{width:"54px"}}></Th>
+                        <Th style={{width: '167px'}}>Date</Th>
+                        <Th style={{width: '207px'}}>Amount</Th>
+                        <Th style={{width: '393px'}}>Groups</Th>
+                        <Th style={{width: '263px'}}>Receiver</Th>
                     </Tr>
                 </Thead>
                 <tbody>
@@ -77,15 +78,15 @@ function StudentGroups({ data }) {
                         return (
                             <Link to={`/student/${value.id}`} style={{textDecoration: "none"}}>
                                 <Tr key={index}>
-                                    <NumberTd>{index + 1}</NumberTd>
-                                    <Td style={{width: '230px', marginLeft: '20px'}}>
+                                    <NumberTd style={{width:"54px"}}>{index + 1}</NumberTd>
+                                    <Td style={{width: '167px'}}>
                                         <TelNumber>{value.group.date}</TelNumber>
                                     </Td>
-                                    <Td style={{width: '250px'}}><TelNumber>{value.group.amount} Won</TelNumber></Td>
-                                    <Td style={{width: '350px'}}>
+                                    <Td style={{width: '207px'}}><TelNumber>{value.group.amount} Won</TelNumber></Td>
+                                    <Td style={{width: '393px'}}>
                                         <TelNumber>{value.group.group}</TelNumber>
                                     </Td>
-                                    <Td style={{width: '190px'}}>
+                                    <Td style={{width: '263px'}}>
                                         <TelNumber>{value.group.receiver}</TelNumber>
                                     </Td>
                                 </Tr>

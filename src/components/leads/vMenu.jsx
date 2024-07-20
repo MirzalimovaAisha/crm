@@ -1,23 +1,34 @@
-import React, { useState } from 'react'
-import { LeadsData } from '../mock/leads'
-import { Table, TableHeader, TablePhoneNumber, TableAvatarLetter, TableDiv, TableNumber, TableTr, TableData  } from "./style";
+import React, { useState } from "react";
+import { LeadsData } from "../mock/leads";
+import {
+  Table,
+  TableHeader,
+  TablePhoneNumber,
+  TableAvatarLetter,
+  TableDiv,
+  TableNumber,
+  TableTr,
+  TableData,
+  TdLeds,
+} from "./style";
 
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
-import addIcon from '../../assets/add-icon.svg';
-import moreIcon from '../../assets/moreLength.svg';
-import editicon from '../../assets/edit-icon.svg';
-import deleteIcon from '../../assets/delete-icon.svg';
-import chatIcon from '../../assets/chat-icon.svg'
-import SendSmsModal from './sendSmsModal';
-import AddToGroupModal from './addToGroupModal';
+import addIcon from "../../assets/add-icon.svg";
+import moreIcon from "../../assets/moreLength.svg";
+import editicon from "../../assets/edit-icon.svg";
+import deleteIcon from "../../assets/delete-icon.svg";
+import chatIcon from "../../assets/chat-icon.svg";
+import SendSmsModal from "./sendSmsModal";
+import AddToGroupModal from "./addToGroupModal";
+import { Tbody, Td, Th, Thead, Tr } from "../groups/style";
 
 function VMenu() {
-  const data = LeadsData.maindata
+  const data = LeadsData.maindata;
 
-  const [open3, setOpen3] = React.useState(false)
-  const [open4, setOpen4] = React.useState(false)
+  const [open3, setOpen3] = React.useState(false);
+  const [open4, setOpen4] = React.useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedMenu, setSelectedMenu] = useState(null);
@@ -33,61 +44,96 @@ function VMenu() {
   };
 
   const openFunction1 = () => {
-    handleClose()
-    setOpen3(true)
-  }
+    handleClose();
+    setOpen3(true);
+  };
+
   const openFunction2 = () => {
-    handleClose()
-    setOpen4(true)
-  }
+    handleClose();
+    setOpen4(true);
+  };
+
   return (
     <div>
-        <Table>
-            <thead>
-                <tr>
-                    <TableHeader></TableHeader>
-                    <TableHeader>Lead name</TableHeader>
-                    <TableHeader>Phone number</TableHeader>
-                    <TableHeader>From where</TableHeader>
-                    <TableHeader>Section</TableHeader>
-                    <TableHeader></TableHeader>
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((value, key)=> {
-                    return(
-                        <TableTr key={key}>
-                          <TableData><TableNumber>{value.id}</TableNumber></TableData>
-                          <TableData>
-                              <TableDiv>
-                                <TableAvatarLetter></TableAvatarLetter> 
-                                    {value.leads.name}
-                                </TableDiv>
-                          </TableData>
-                          <TableData><TablePhoneNumber>{value.leads.phoneNumber}</TablePhoneNumber></TableData>
-                          <TableData>{value.leads.fromWhere || "---"}</TableData>
-                          <TableData>{value.leads.section}</TableData>
-                          <TableData><img src={moreIcon} alt="" aria-controls={selectedMenu === 'hi-elementary' ? 'basic-menu' : undefined}
-                                aria-haspopup="true"
-                                aria-expanded={selectedMenu === 'hi-elementary' ? 'true' : undefined}
-                                onClick={(e) => handleClick(e, 'hi-elementary')}/></TableData>
+      <Table>
+        <Thead>
+          <Tr $hoverNone>
+            <Th></Th>
+            <Th style={{ width: "361px" }}>Lead name</Th>
+            <Th style={{ width: "202px" }}>Phone number</Th>
+            <Th style={{ width: "233px" }}>From where</Th>
+            <Th style={{ width: "183px" }}>Section</Th>
+            <Th style={{ width: "61px" }}></Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {data.map((value, key) => {
+            return (
+              <TableTr key={key}>
+                <Td>
+                  <TableNumber>{value.id}</TableNumber>
+                </Td>
+                <Td $bold style={{ width: "361px" }}>
+                  <TableDiv>
+                    <TableAvatarLetter>{value.leads.name[0]}</TableAvatarLetter>
+                    {value.leads.name}
+                  </TableDiv>
+                </Td>
+                <Td style={{ width: "202px" }}>
+                  <TablePhoneNumber>{value.leads.phoneNumber}</TablePhoneNumber>
+                </Td>
+                <Td $bold style={{ width: "233px" }}>
+                  {value.leads.fromWhere || "---"}
+                </Td>
+                <Td $bold style={{ width: "183px" }}>{value.leads.section}</Td>
+                <Td $bold style={{ width: "61px" }}>
+                  <img
+                    src={moreIcon}
+                    alt="More options"
+                    aria-controls={
+                      selectedMenu === value.id ? "basic-menu" : undefined
+                    }
+                    aria-haspopup="true"
+                    aria-expanded={
+                      selectedMenu === value.id ? "true" : undefined
+                    }
+                    onClick={(e) => handleClick(e, value.id)}
+                  />
+                  <Menu
+                    id="hi-menu"
+                    anchorEl={anchorEl}
+                    open={selectedMenu === value.id}
+                    onClose={handleClose}
+                    MenuListProps={{ "aria-labelledby": "basic-button" }}
+                  >
+                    <MenuItem onClick={handleClose}>
+                      <img src={editicon} alt="Edit" />
+                      Edit
+                    </MenuItem>
+                    <MenuItem onClick={handleClose}>
+                      <img src={deleteIcon} alt="Delete" />
+                      Delete
+                    </MenuItem>
+                    <MenuItem onClick={openFunction2}>
+                      <img src={chatIcon} alt="Sms" />
+                      Sms
+                    </MenuItem>
+                    <MenuItem onClick={openFunction1}>
+                      <img src={addIcon} alt="Add to group" />
+                      Add to group
+                    </MenuItem>
+                  </Menu>
+                </Td>
+              </TableTr>
+            );
+          })}
+        </Tbody>
+      </Table>
 
-                          <Menu id="hi-menu" anchorEl={anchorEl} open={selectedMenu === 'hi-elementary'} onClose={handleClose} MenuListProps={{ 'aria-labelledby': 'basic-button' }}>
-                            <MenuItem onClick={handleClose}><img src={editicon} alt="" style={{ marginRight: "10px" }} />Edit</MenuItem>
-                            <MenuItem onClick={handleClose}><img src={deleteIcon} alt="" style={{ marginRight: "10px" }} />Delete</MenuItem>
-                            <MenuItem onClick={openFunction2}><img src={chatIcon} alt="" style={{ marginRight: "5px" }} />Sms</MenuItem>
-                            <MenuItem onClick={openFunction1}><img src={addIcon} alt="" style={{ marginRight: "5px" }} />Add to group</MenuItem>
-                          </Menu>
-                       </TableTr>
-                    )
-                })}
-            </tbody>
-        </Table>
-        
-        <AddToGroupModal open={open3} setOpen={setOpen3}/>
-        <SendSmsModal open={open4} setOpen={setOpen4}/>
+      <AddToGroupModal open={open3} setOpen={setOpen3} />
+      <SendSmsModal open={open4} setOpen={setOpen4} />
     </div>
-  )
+  );
 }
 
-export default VMenu
+export default VMenu;

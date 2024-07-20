@@ -7,24 +7,25 @@ function Sms() {
     const sms = smsData.maindata;
 
     return (
-        <Table style={{width: '980px'}}>
+        <Table style={{ marginBottom:"100px"}}>
             <Thead>
                 <Tr $hoverNone>
-                    <Th style={{width: '600px', marginLeft: '80px'}}>SMS</Th>
-                    <Th style={{width: '230px'}}>Sender</Th>
-                    <Th style={{width: '150px'}}>Date</Th>
+                    <Th></Th>
+                    <Th style={{width: '652px', padding:"0px"}}>SMS</Th>
+                    <Th style={{width: '182px'}}>Sender</Th>
+                    <Th $center style={{width: '209px', }}>Date</Th>
                 </Tr>
             </Thead>
             <tbody>
                 {sms.map((value, index) => {
                     return (
                         <Tr key={index}>
-                            <NumberTd>{index + 1}</NumberTd>
-                            <Td style={{width: '650px', marginLeft: '20px'}}>
+                            <NumberTd style={{width:"44px"}}>{index + 1}</NumberTd>
+                            <Td style={{width: '652px', padding:"0px"}}>
                                 <CommentContent style={{color: '#2C2669'}}>{value.sms.sms}</CommentContent>
                             </Td>
-                            <Td style={{width: '250px'}}><TelNumber>{value.sms.sender}</TelNumber></Td>
-                            <Td style={{width: '150px'}}><TelNumber>{value.sms.date} | {value.sms.time}</TelNumber></Td>
+                            <Td style={{width: '182px'}}><TelNumber>{value.sms.sender}</TelNumber></Td>
+                            <Td $center style={{width: '209px'}}><TelNumber>{value.sms.date} | {value.sms.time}</TelNumber></Td>
                         </Tr>
                     )
                 })}

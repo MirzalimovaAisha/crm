@@ -45,7 +45,7 @@ export const Menu = styled.button`
 export const Icon = styled.img`
     width: 20px;
     height: 20px;
-    filter: ${(props) => props.active ? 'invert(0)' : 'invert(1)'};
+    /* filter: ${(props) => props.active ? '' : 'invert(1)'}; */
 `;
 
 export const SearchStudent = styled.div`
@@ -63,8 +63,9 @@ export const SearchStudent = styled.div`
         width: 100%;
         height: 20px;
         border: none;
-        /* color: #BFBAE3 !important; */
+        color: black !important;
         &:focus {
+            /* color: black; */
             color: #BFBAE3 !important;
             outline: none;
         }
@@ -309,18 +310,17 @@ export const SectionUserRight = styled.div`
 
 // Vmenu
 export const Table = styled.table`
-  /* width: 100%; */
-  width: 1084px;
-  /* margin-left: 230px; */
+  width: 100%;
   border-collapse: collapse;
   background-color: #fff;
-  border-top-left-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 16px 16px 0px 0px;
+  overflow: hidden;
+  box-shadow: 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
 `;
 
 export const TableHeader = styled.th`
   border-top-left-radius: ${(props)=> props.$leftBorderRadius ? `16px` : ``};
-  background-color: #f2f2f2;
+  background-color: #FAFAFB;
   height: 52px;
   text-align: left;
   text-align: ${(props)=> props.$textCenterTH ? `center`: ``};
@@ -334,13 +334,16 @@ export const TableHeader = styled.th`
 `;
 
 export const TableTr = styled.tr`
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
   &:hover {
     background: #938b8b14;
     cursor: pointer;
   }
 `;
 
-export const TableData = styled.td`
+export const TdLeds = styled.td`
   border-bottom: 1px solid #ddd;
   padding: 15px 0px;
   height: 70px;

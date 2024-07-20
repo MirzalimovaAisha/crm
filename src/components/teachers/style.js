@@ -91,7 +91,6 @@ export const TeacherPhoto = styled.div`
 `;
 
 export const Table = styled.table`
-    width: 900px;
     background: #fff;
     /* border-top-right-radius: 20px;
     border-top-left-radius: 20px; */
@@ -108,6 +107,10 @@ export const THead = styled.thead`
     background: #fafafb;
     justify-content: space-around;
     box-shadow: 0px -1px 0px 0px #edf2f7 inset;
+
+    color: #A098D5;
+    font-size: 12px;
+    font-weight: 600;
 `;
 
 export const Tr = styled.tr`
@@ -161,9 +164,9 @@ export const FullNameTd = styled.td`
     align-items: center;
     width: 420px;
 
-    color: #2c2669;
+    color: #A098D5;
     font-family: "Public Sans";
-    font-size: 14px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 700;
     line-height: 16px;
@@ -203,14 +206,14 @@ export const TeacherProfileTabListBtn = styled.div`
 `;
 
 export const TeacherProfilePageContainer = styled.div`
-    width: 1093px;
+    /* width: 1140px; */
     display: flex;
     flex-direction: column;
     /* padding: 130px 50px 20px 300px; */
     margin-top: 40px;
     background: #efeef8;
     margin-left: 256px;
-    gap: 50px;
+    gap: 40px;
 `;
 
 export const TeacherProfileCard = styled.div`
@@ -334,10 +337,9 @@ export const TeacherProfileCardBottomText = styled.div`
 
 // Groups
 export const GroupsContainer = styled.div`
-    /* width: 50%; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    gap: 40px;
 `;
 
 export const GroupsCard = styled.div`
@@ -381,10 +383,9 @@ export const GroupCardCenter = styled.div`
 export const GroupName = styled.div`
     margin-top: 10px;
     color: #2c2669;
-    font-size: 18px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    line-height: 24px;
 `;
 
 export const Course = styled.div`
@@ -465,12 +466,12 @@ export const SeeGroupBtn = styled.div`
 `;
 
 export const SalaryTr = styled.tr`
+    /* color: #6053B9; */
     height: 70px;
     background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 20px;
     border-top: 0.1px solid #edecf3;
 
     &:hover {
@@ -480,14 +481,24 @@ export const SalaryTr = styled.tr`
 `;
 
 export const SalaryTd = styled.td`
-    color: #6053b9;
     width: 270px;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: ${(props)=> (props.$bold) ? "#2C2669" : "#6053B9"};
+    font-weight: ${(props)=> (props.$bold) ? "700" : "600"};
+    font-size: 14px;
+
+    &.td{
+        color: #A098D5;
+        font-size: 12px;
+        font-weight: 600;
+    }
 `;
 
 export const AddTeacherModalStyle = styled.div`
+    margin-top: 50px;
+    margin-bottom: 50px;
     width: 650px;
     background: #ffffff70;
     /* box-shadow: 0px 3px 5px 0px #231e54; */
@@ -512,6 +523,20 @@ export const AddTeacherModalStyle = styled.div`
         }
     }
 `;
+
+export const ModalScroll = styled.div`
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    overflow: scroll;
+    height: 100vh;
+
+    ::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+    }
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    scrollbar-width: none;  /* Firefox */
+`
 
 export const AddTeacherModalTop = styled.div`
     position: relative;

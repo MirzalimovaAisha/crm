@@ -268,7 +268,20 @@ function GridMenu() {
                       }
                       onClick={(e) => handleClick(e, "info-elementary")}
                     />
-                    <img src={moreIcon} alt="" />
+                    <img
+                      src={moreIcon}
+                      alt=""
+                      aria-controls={
+                        selectedMenu === "hi-elementary"
+                          ? "basic-menu"
+                          : undefined
+                      }
+                      aria-haspopup="true"
+                      aria-expanded={
+                        selectedMenu === "hi-elementary" ? "true" : undefined
+                      }
+                      onClick={(e) => handleClick(e, "hi-elementary")}
+                    />
                   </SectionUserRight>
                 </SectionUser>
                 <SectionUser>
@@ -294,7 +307,20 @@ function GridMenu() {
                       }
                       onClick={(e) => handleClick(e, "info-elementary")}
                     />
-                    <img src={moreIcon} alt="" />
+                    <img
+                      src={moreIcon}
+                      alt=""
+                      aria-controls={
+                        selectedMenu === "hi-elementary"
+                          ? "basic-menu"
+                          : undefined
+                      }
+                      aria-haspopup="true"
+                      aria-expanded={
+                        selectedMenu === "hi-elementary" ? "true" : undefined
+                      }
+                      onClick={(e) => handleClick(e, "hi-elementary")}
+                    />
                   </SectionUserRight>
                 </SectionUser>
               </AccordionDetails>
@@ -399,11 +425,13 @@ function GridMenu() {
                 src={moreIcon}
                 alt=""
                 aria-controls={
-                  selectedMenu === "beginner" ? "basic-menu" : undefined
+                  selectedMenu === "elementary" ? "basic-menu" : undefined
                 }
                 aria-haspopup="true"
-                aria-expanded={selectedMenu === "beginner" ? "true" : undefined}
-                onClick={(e) => handleClick(e, "beginner")}
+                aria-expanded={
+                  selectedMenu === "elementary" ? "true" : undefined
+                }
+                onClick={(e) => handleClick(e, "elementary")}
               />
               <AccordionDetails sx={{ position: "relative" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -421,13 +449,13 @@ function GridMenu() {
                 src={moreIcon}
                 alt=""
                 aria-controls={
-                  selectedMenu === "intermediate" ? "basic-menu" : undefined
+                  selectedMenu === "elementary" ? "basic-menu" : undefined
                 }
                 aria-haspopup="true"
                 aria-expanded={
-                  selectedMenu === "intermediate" ? "true" : undefined
+                  selectedMenu === "elementary" ? "true" : undefined
                 }
-                onClick={(e) => handleClick(e, "intermediate")}
+                onClick={(e) => handleClick(e, "elementary")}
               />
               <AccordionDetails sx={{ position: "relative" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -470,13 +498,13 @@ function GridMenu() {
                 src={moreIcon}
                 alt=""
                 aria-controls={
-                  selectedMenu === "intermediate" ? "basic-menu" : undefined
+                  selectedMenu === "elementary" ? "basic-menu" : undefined
                 }
                 aria-haspopup="true"
                 aria-expanded={
-                  selectedMenu === "intermediate" ? "true" : undefined
+                  selectedMenu === "elementary" ? "true" : undefined
                 }
-                onClick={(e) => handleClick(e, "intermediate")}
+                onClick={(e) => handleClick(e, "elementary")}
               />
               <AccordionDetails sx={{ position: "relative" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -519,13 +547,13 @@ function GridMenu() {
                 src={moreIcon}
                 alt=""
                 aria-controls={
-                  selectedMenu === "intermediate" ? "basic-menu" : undefined
+                  selectedMenu === "elementary" ? "basic-menu" : undefined
                 }
                 aria-haspopup="true"
                 aria-expanded={
-                  selectedMenu === "intermediate" ? "true" : undefined
+                  selectedMenu === "elementary" ? "true" : undefined
                 }
-                onClick={(e) => handleClick(e, "intermediate")}
+                onClick={(e) => handleClick(e, "elementary")}
               />
               <AccordionDetails sx={{ position: "relative" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -568,13 +596,13 @@ function GridMenu() {
                 src={moreIcon}
                 alt=""
                 aria-controls={
-                  selectedMenu === "intermediate" ? "basic-menu" : undefined
+                  selectedMenu === "elementary" ? "basic-menu" : undefined
                 }
                 aria-haspopup="true"
                 aria-expanded={
-                  selectedMenu === "intermediate" ? "true" : undefined
+                  selectedMenu === "elementary" ? "true" : undefined
                 }
-                onClick={(e) => handleClick(e, "intermediate")}
+                onClick={(e) => handleClick(e, "elementary")}
               />
               <AccordionDetails sx={{ position: "relative" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -616,13 +644,13 @@ function GridMenu() {
                 src={moreIcon}
                 alt=""
                 aria-controls={
-                  selectedMenu === "intermediate" ? "basic-menu" : undefined
+                  selectedMenu === "elementary" ? "basic-menu" : undefined
                 }
                 aria-haspopup="true"
                 aria-expanded={
-                  selectedMenu === "intermediate" ? "true" : undefined
+                  selectedMenu === "elementary" ? "true" : undefined
                 }
-                onClick={(e) => handleClick(e, "intermediate")}
+                onClick={(e) => handleClick(e, "elementary")}
               />
               <AccordionDetails sx={{ position: "relative" }}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

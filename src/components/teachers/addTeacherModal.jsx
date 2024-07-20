@@ -9,6 +9,8 @@ import {
     ModalInput,
     ModalInputContainer,
     ModalLabel,
+    ModalScroll,
+    UploadPhoto,
 } from "./style";
 import { Checkbox, FormControlLabel } from "@mui/material";
 import PhoneInput from "react-phone-input-2";
@@ -48,131 +50,142 @@ export function AddTeacherModal({ open, setOpen }) {
                     alignItems: "center",
                 }}
             >
-                <AddTeacherModalStyle>
-                    <AddTeacherModalTop>
-                        <ModalClose sx={{ position: "absolute", mt: "-5px" }} />
-                    </AddTeacherModalTop>
-                    <AddTeacherModalBottom>
-                        <AddNewTeacher>Add new teacher</AddNewTeacher>
-                        <ModalInputContainer>
-                            <ModalLabel htmlFor="name">Full name</ModalLabel>
-                            <ModalInput
-                                id="name"
-                                type="text"
-                                placeholder="Enter name"
-                            />
-                        </ModalInputContainer>
-                        <ModalInputContainer>
-                            <ModalLabel htmlFor="surname">
-                                Telegram username
-                            </ModalLabel>
-                            <ModalInput
-                                id="surname"
-                                type="text"
-                                placeholder="Enter username"
-                            />
-                        </ModalInputContainer>
-                        <ModalInputContainer>
-                            <ModalLabel htmlFor="photo">
-                                Upload photo
-                            </ModalLabel>
-                            <ModalInput
-                                id="photo"
-                                type="text"
-                                value={fileName}
-                                className="input-with-icon"
-                                placeholder="Upload photo"
-                            />
-                        </ModalInputContainer>
-                        <ModalInputContainer>
-                            <ModalLabel htmlFor="percent">
-                                Percent(%)
-                            </ModalLabel>
-                            <ModalInput
-                                id="percent"
-                                type="text"
-                                placeholder="Enter percent"
-                            />
-                        </ModalInputContainer>
-                        <ModalInputContainer>
-                            <ModalLabel>Branches</ModalLabel>
-                            <div style={{ display: "flex", color: "#6053B9" }}>
-                                <FormControlLabel
-                                    control={<Checkbox />}
-                                    label="Seoul"
+                <ModalScroll>
+                    <AddTeacherModalStyle>
+                        <AddTeacherModalTop>
+                            <ModalClose sx={{ position: "absolute", mt: "-5px" }} />
+                        </AddTeacherModalTop>
+                        <AddTeacherModalBottom>
+                            <AddNewTeacher>Add new teacher</AddNewTeacher>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="name">Full name</ModalLabel>
+                                <ModalInput
+                                    id="name"
+                                    type="text"
+                                    placeholder="Enter name"
                                 />
-                                <FormControlLabel
-                                    control={<Checkbox />}
-                                    label="Gyeongsan"
+                            </ModalInputContainer>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="surname">
+                                    Telegram username
+                                </ModalLabel>
+                                <ModalInput
+                                    id="surname"
+                                    type="text"
+                                    placeholder="Enter username"
                                 />
-                                <FormControlLabel
-                                    control={<Checkbox />}
-                                    label="Daegu"
-                                />
-                                <FormControlLabel
-                                    control={<Checkbox />}
-                                    label="Gwangju"
-                                />
-                            </div>
-                        </ModalInputContainer>
-                        <ModalInputContainer>
-                            <ModalLabel htmlFor="phone">
-                                Phone number
-                            </ModalLabel>
-                            <PhoneInput
-                                country={"us"}
-                                value={phone}
-                                onChange={(phone) => setPhone(phone)}
-                                inputStyle={{ width: "300px" }}
-                                buttonStyle={{
-                                    height: "58px",
-                                    borderRadius: "8px 0 0 8px",
-                                    background: "#EFEEF8",
-                                }}
-                            />
-                        </ModalInputContainer>
-                        <ModalInputContainer>
-                            <ModalLabel htmlFor="password">Password</ModalLabel>
-                            <ModalInput
-                                type={showPassword ? "text" : "password"}
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Enter email address"
-                                id="Password"
-                                style={{ padding: "0px 50px 0px 16px" }}
-                            />
-                            <div
-                                style={{
-                                    position: "absolute",
-                                    display: "flex",
-                                    justifyContent: "end",
-                                    alignItems: "center",
-                                    top: "43px",
-                                    right: "20px",
-                                }}
-                            >
-                                {showPassword ? (
-                                    <FaEyeSlash
-                                        style={{
-                                            transform: "scale(1.5)",
-                                            cursor: "pointer",
-                                        }}
-                                        onClick={togglePasswordVisibility}
+                            </ModalInputContainer>
+                            <ModalInputContainer
+                                    style={{ margin: "0", position: "relative" }}
+                                >
+                                    <ModalLabel htmlFor="name">
+                                        Uplaod photo
+                                    </ModalLabel>
+                                    <UploadPhoto
+                                        id="photo"
+                                        type="file"
+                                        onChange={handleFileChange}
                                     />
-                                ) : (
-                                    <FaEye
+                                    <ModalInput
+                                        id="photo"
+                                        type="text"
+                                        value={fileName}
+                                        placeholder="Upload photo"
                                         style={{
-                                            transform: "scale(1.5)",
-                                            cursor: "pointer",
+                                            width: "100%",
                                         }}
-                                        onClick={togglePasswordVisibility}
                                     />
-                                )}
-                            </div>
-                        </ModalInputContainer>
-                        <SendButton>Add teacher</SendButton>
-                    </AddTeacherModalBottom>
-                </AddTeacherModalStyle>
+                                </ModalInputContainer>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="percent">
+                                    Percent(%)
+                                </ModalLabel>
+                                <ModalInput
+                                    id="percent"
+                                    type="text"
+                                    placeholder="Enter percent"
+                                />
+                            </ModalInputContainer>
+                            <ModalInputContainer>
+                                <ModalLabel>Branches</ModalLabel>
+                                <div style={{ display: "flex", color: "#6053B9" }}>
+                                    <FormControlLabel
+                                        control={<Checkbox />}
+                                        label="Seoul"
+                                    />
+                                    <FormControlLabel
+                                        control={<Checkbox />}
+                                        label="Gyeongsan"
+                                    />
+                                    <FormControlLabel
+                                        control={<Checkbox />}
+                                        label="Daegu"
+                                    />
+                                    <FormControlLabel
+                                        control={<Checkbox />}
+                                        label="Gwangju"
+                                    />
+                                </div>
+                            </ModalInputContainer>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="phone">
+                                    Phone number
+                                </ModalLabel>
+                                <PhoneInput
+                                    country={"us"}
+                                    value={phone}
+                                    onChange={(phone) => setPhone(phone)}
+                                    inputStyle={{ width: "300px" }}
+                                    buttonStyle={{
+                                        height: "58px",
+                                        borderRadius: "8px 0 0 8px",
+                                        background: "#EFEEF8",
+                                    }}
+                                />
+                            </ModalInputContainer>
+                            <ModalInputContainer>
+                                <ModalLabel htmlFor="password">Password</ModalLabel>
+                                <ModalInput
+                                    type={showPassword ? "text" : "password"}
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    placeholder="Enter email address"
+                                    id="Password"
+                                    style={{ padding: "0px 50px 0px 16px" }}
+                                />
+                                <div
+                                    style={{
+                                        position: "absolute",
+                                        display: "flex",
+                                        justifyContent: "end",
+                                        alignItems: "center",
+                                        top: "43px",
+                                        right: "20px",
+                                    }}
+                                >
+                                    {showPassword ? (
+                                        <FaEyeSlash
+                                            style={{
+                                                transform: "scale(1.5)",
+                                                cursor: "pointer",
+                                            }}
+                                            onClick={togglePasswordVisibility}
+                                        />
+                                    ) : (
+                                        <FaEye
+                                            style={{
+                                                transform: "scale(1.5)",
+                                                cursor: "pointer",
+                                            }}
+                                            onClick={togglePasswordVisibility}
+                                        />
+                                    )}
+                                </div>
+                            </ModalInputContainer>
+                            <SendButton>Add teacher</SendButton>
+                        </AddTeacherModalBottom>
+                    </AddTeacherModalStyle>
+                </ModalScroll>
             </Modal>
         </div>
     );

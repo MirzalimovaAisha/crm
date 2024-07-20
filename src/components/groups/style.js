@@ -14,8 +14,8 @@ export const FiltersContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
-    padding: 10px 0;
+    margin-bottom: 60px;
+    /* padding: 10px 0; */
     border-radius: 8px;
     /* width: 100%; */
 `;
@@ -84,7 +84,6 @@ export const Table = styled.table`
     background: #fff;
     overflow: hidden;
     border-radius: 16px;
-    padding: -10px;
     font-family:"Public Sans" ;
     border-collapse: collapse;
     box-shadow: 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
@@ -137,6 +136,7 @@ export const Td = styled.td`
     align-items: center;
     gap: 12px;
     font-size: 14px;
+    /* width: 44px; */
 
     color: ${(props)=> props.$purple ? "#6053B9" : "#2C2669"};
     font-weight: ${(props)=> props.$bold ? "700" : "500"};
@@ -167,8 +167,9 @@ export const CircleIcon = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-right: 10px; */
     font-weight: bold;
+    color: #2C2669;
+    overflow: hidden;
 `;
 
 export const PageSelect = styled.select`

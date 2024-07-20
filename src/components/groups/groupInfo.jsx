@@ -83,7 +83,7 @@ const GroupInfoComponent = () => {
   const filterData = data.filter((value) => value.id == id);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div style={{ display: "flex", justifyContent: "center", width:"1093px" }}>
       <TeacherProfilePageContainer>
         {/* <StudentPr  ofile data={resultData} /> */}
         {filterData.map((value) => (

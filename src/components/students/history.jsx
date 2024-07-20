@@ -9,7 +9,7 @@ import {
 
 function History({ data }) {
   return (
-    <GroupsCard style={{ width: "100%" }}>
+    <GroupsCard style={{ width: "100%", marginBottom:"100px" }}>
       <HistoryCardTop>
         <GroupName style={{ fontSize: "20px" }}>Status changed</GroupName>
         <HistoryGap style={{ flexDirection: "column", alignItems: "end" }}>

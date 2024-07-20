@@ -5,7 +5,7 @@ export const expenseData = {
             expense: {
                 amount: '25 000 000',
                 category: 'Salary',
-                description: 'For May',
+                description: 'May oyi uchun',
                 date: '06.06.2024'
             }
         },
@@ -23,7 +23,7 @@ export const expenseData = {
             expense: {
                 amount: '25 000 000',
                 category: 'Salary',
-                description: 'Salary',
+                description: 'Oylik',
                 date: '06.06.2024'
             }
         },

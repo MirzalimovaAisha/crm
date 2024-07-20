@@ -126,3 +126,23 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+
+.css-3dzjca-MuiPaper-root-MuiPopover-paper-MuiMenu-paper{
+    gap: 10px !important;
+    color: #6053b9 !important;
+    font-family: "Public Sans" !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.css-1q657ja-JoyModal-root~[role="listbox"]{
+    padding: 4px !important;
+    background: #EFEEF8 !important;
+}
+.css-pblgji-JoySelect-listbox{
+    padding: 4px !important;
+}
+
+.css-x7r446-JoySelect-listbox{
+    padding: 4px !important;
+}

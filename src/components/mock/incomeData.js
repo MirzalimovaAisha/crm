@@ -5,7 +5,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Qurbonsaid Rayimov',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }
@@ -15,7 +15,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Qurbonsaid Rayimov',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }
@@ -25,7 +25,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Aisha Mirzalimova',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }
@@ -35,7 +35,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Qurbonsaid Rayimov',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }
@@ -45,7 +45,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Qurbonsaid Rayimov',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }
@@ -55,7 +55,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Aisha Mirzalimova',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }
@@ -65,7 +65,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Qurbonsaid Rayimov',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }
@@ -75,7 +75,7 @@ export const incomeData = {
             income: {
                 won: '51 000 000',
                 group: 'IT Bootcamp',
-                student: 'Ali Mirzo',
+                student: 'Qurbonsaid Rayimov',
                 attendDate: '06.06.2024',
                 paymentDate: '08.06.2024'
             }

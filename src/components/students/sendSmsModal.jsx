@@ -2,7 +2,7 @@ import * as React from 'react'
 import Modal from '@mui/joy/Modal'
 import ModalClose from '@mui/joy/ModalClose'
 import { DemoLeftContainer, SendButton } from '../home/style'
-import { AddNewTeacher, AddTeacherModalTop, ModalInput, ModalLabel } from '../teachers/style'
+import { AddNewTeacher, AddTeacherModalBottom, AddTeacherModalStyle, AddTeacherModalTop, ModalInput, ModalLabel } from '../teachers/style'
 
 export function SendSmsModal({ open, setOpen }) {
     return (
@@ -13,19 +13,20 @@ export function SendSmsModal({ open, setOpen }) {
                 open={open}
                 sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
-                <DemoLeftContainer style={{width: '650px', borderRadius: '0px', height: '500px'}}>
-                    <AddTeacherModalTop style={{marginLeft: '-40px', marginTop: '-30px'}}>
+                <AddTeacherModalStyle>
+                    <AddTeacherModalTop>
                         <ModalClose sx={{position: 'absolute', mt: '-5px'}} onClick={setOpen}/>
                     </AddTeacherModalTop>
-                    <AddNewTeacher style={{margin: '30px 0'}}>Send SMS</AddNewTeacher>
-                    <div style={{display: "flex", flexDirection: "column", gap: "30px"}}>
-                        <div>
-                            <ModalLabel htmlFor='name'>Full name</ModalLabel>
-                            <ModalInput id='name' placeholder='Enter message' type='text' style={{height: '250px'}}/>
+                    <AddTeacherModalBottom>
+                        <AddNewTeacher>Send SMS</AddNewTeacher>
+                        <div style={{display: "flex", flexDirection: "column", gap: "30px"}}>
+                            <div>
+                                <ModalInput id='name' placeholder='Enter message' type='text' style={{padding:" 20px 16px 203px"}}/>
+                            </div>
+                            <SendButton>Send</SendButton>
                         </div>
-                        <SendButton>Send</SendButton>
-                    </div>
-                </DemoLeftContainer>
+                    </AddTeacherModalBottom>
+                </AddTeacherModalStyle>
             </Modal>
         </div>
     )

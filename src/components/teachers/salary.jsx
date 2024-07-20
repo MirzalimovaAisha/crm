@@ -46,7 +46,7 @@ function Salary({ incomeData, exprenseData }) {
                         <tbody>
                             {incomeData.map((value, key) => (
                                 <SalaryTr key={key}>
-                                    <SalaryTd>{value.income.won} Won</SalaryTd>
+                                    <SalaryTd $bold>{value.income.won} Won</SalaryTd>
                                     <SalaryTd>{value.income.group}</SalaryTd>
                                     <SalaryTd>{value.income.student}</SalaryTd>
                                     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -70,7 +70,7 @@ function Salary({ incomeData, exprenseData }) {
                         <tbody>
                             {exprenseData.map((value, key) => (
                                 <SalaryTr key={key}>
-                                    <SalaryTd>{value.expense.amount} Won</SalaryTd>
+                                    <SalaryTd  $bold>{value.expense.amount} Won</SalaryTd>
                                     <SalaryTd>{value.expense.category}</SalaryTd>
                                     <SalaryTd style={{justifyContent: 'start', marginLeft: '50px'}}>{value.expense.description}</SalaryTd>
                                     <SalaryTd style={{marginLeft: '-50px'}}>{value.expense.date}</SalaryTd>
