@@ -337,7 +337,7 @@ export const LoginContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 30px;
-    height: 100vh;
+    padding: 30px 0px;
     background: #efeef8;
 `;
 
