@@ -15,6 +15,7 @@ import Students from './components/students/students'
 import StudentInfo from './components/students/studentInfo'
 import GroupInfoComponent from './components/groups/groupInfo'
 import BudgetComponent from './components/budget/budget'
+import './index.css'
 
 function RouterComponent() {
   const location = useLocation()

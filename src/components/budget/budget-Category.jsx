@@ -3,15 +3,16 @@ import { Table, Tbody, Td, Th, Thead, Tr } from '../groups/style'
 import { CategoryIcon, CategoryIconButton } from './style'
 import editIcon from "../../assets/pencil-icon.svg"
 import deliteIcon from "../../assets/trash.svg"
+import { WidthFull } from '@mui/icons-material'
 
 const BudgetCategory = () => {
   return (
     <div>
         <Table>
             <Thead>
-                <Tr $header>
+                <Tr $header style={{width:"100%"}}>
                     <Th></Th>
-                    <Th style={{padding:"0px 65px"}}>Category</Th>
+                    <Th style={{padding:"0px 65px", width:"836px"}}>Category</Th>
                 </Tr>
             </Thead>
             <Tbody>

@@ -7,7 +7,7 @@ const BudgetIncome = () => {
   const data = budgetIncomeData.maindata;
   return (
     <div style={{marginBottom:"100px"}}>
-      <BudgetTopTextContainer>
+      <BudgetTopTextContainer $total>
         <BudgetTopText $dark>
           Total income
           <svg
