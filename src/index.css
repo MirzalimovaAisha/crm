@@ -179,3 +179,46 @@ body {
 .css-13xfq8m-MuiTabPanel-root{
     padding: 30px 0px 0px !important;
 } */
+
+
+
+
+
+
+
+
+
+
+/* sx={{
+    borderBottom: 1,
+    borderColor: "divider",
+    '.css-1aquho2-MuiTabs-indicator': {
+      display: "none",
+    },
+    '.css-heg063-MuiTabs-flexContainer': {
+      height: "44px",
+    },
+    '.css-jpln7h-MuiTabs-scroller': {
+      border: "2px solid var(--600, #2C2669)",
+      borderRadius: "6px",
+      transition: "all 0.2s",
+    },
+    '.css-1h9z7r5-MuiButtonBase-root-MuiTab-root': {
+      width: "187px",
+      color: "#2C2669 !important",
+      fontSize: "14px !important",
+      fontWeight: "500 !important",
+      transition: "all 0.2s",
+      fontFamily: "Public Sans !important",
+      textTransform: "none !important",
+      letterSpacing: "0 !important",
+      minHeight: "auto !important",
+    },
+    '.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected': {
+      transition: "all 0.2s",
+      background: "#2C2669 !important",
+      color: "#fff !important",
+    },
+    '.css-13xfq8m-MuiTabPanel-root': {
+      padding: "30px 0px 0px !important",
+    }, */
