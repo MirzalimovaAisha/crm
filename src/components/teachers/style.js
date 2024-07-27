@@ -344,16 +344,18 @@ export const GroupsContainer = styled.div`
 
 export const GroupsCard = styled.div`
     width: 522px;
-    border-radius: 20px;
+    border-radius: 16px;
     background: #fff;
     padding:26px;
+    box-shadow: 0px 3px 8px 0px rgba(50, 50, 71, 0.05), 0px 0px 1px 0px rgba(12, 26, 75, 0.24);
 `;
 
 export const GroupProfile = styled.div`
+    overflow: hidden;
     width: 70px;
     height: 70px;
     border: 1px solid #2c2669;
-    background: #ddd9f3;
+    background: #A098D5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -398,7 +400,7 @@ export const Course = styled.div`
 
 export const StartDate = styled.div`
     color: #6053b9;
-    font-size: 18px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 24px;

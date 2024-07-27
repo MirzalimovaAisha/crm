@@ -4,7 +4,7 @@ export const commentData = {
             id: 1,
             comment: {
                 comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                creator: 'Mina Yoon',
+                creator: 'Aliyev Ali',
                 date: '05.31.2024',
                 time: '21:32'
             }
@@ -13,7 +13,7 @@ export const commentData = {
             id: 2,
             comment: {
                 comment: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                creator: 'park Seajun',
+                creator: 'Hakimov Sherzod',
                 date: '05.31.2024',
                 time: '21:32'
             }

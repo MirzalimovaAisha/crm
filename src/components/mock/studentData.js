@@ -5,7 +5,7 @@ export const studentData = {
         {
             id: 1,
             student: {
-                name: 'Mina Yoon',
+                name: 'Umida Umiullayevna',
                 photo: profileImg,
                 tel: '01045982365',
                 groupName: [
@@ -14,7 +14,7 @@ export const studentData = {
                 course: [
                     'IT Bootcamp'
                 ],
-                teacher: 'Sooah Kim',
+                teacher: 'Shamsiddin',
                 balance: '200.000',
                 branch: 'Daegu',
                 addedAt: '2024.03.26',
@@ -30,7 +30,7 @@ export const studentData = {
         {
             id: 2,
             student: {
-                name: 'Mina Yoon',
+                name: 'Shoraximov Shamsiddin',
                 photo: '',
                 tel: '01034759231',
                 groupName: [
@@ -41,7 +41,7 @@ export const studentData = {
                     "Prezident maktabiga",
                     "IT Bootcamp"
                 ],
-                teacher: 'Douyon Park',
+                teacher: 'Muhammad Nafisa',
                 balance: '200.000',
                 branch: 'Daegu',
                 addedAt: '2024.03.26',
@@ -57,7 +57,7 @@ export const studentData = {
         {
             id: 3,
             student: {
-                name: 'Mina Yoon',
+                name: 'Botir Umarov',
                 photo: '',
                 tel: '01039947823',
                 groupName: [
@@ -66,7 +66,7 @@ export const studentData = {
                 course: [
                     'IT English'
                 ],
-                teacher: 'Sehoon Lim',
+                teacher: 'Mirmuxsinbek',
                 balance: '200.000',
                 branch: 'Daegu',
                 addedAt: '2024.03.26',
@@ -82,7 +82,7 @@ export const studentData = {
         {
             id: 4,
             student: {
-                name: 'Mina Yoon',
+                name: 'Sherali Sheraliyev',
                 photo: '',
                 tel: '01039848843',
                 groupName: [
@@ -91,7 +91,7 @@ export const studentData = {
                 course: [
                     'IT English'
                 ],
-                teacher: 'Minji Kim',
+                teacher: 'Xojimatdoston',
                 balance: '200.000',
                 branch: 'Daegu',
                 addedAt: '2024.03.26',
@@ -107,7 +107,7 @@ export const studentData = {
         {
             id: 5,
             student: {
-                name: 'Mina Yoon',
+                name: 'Vaxob Vaxobov',
                 photo: '',
                 tel: '01033885494',
                 groupName: [
@@ -116,7 +116,7 @@ export const studentData = {
                 course: [
                     'IT English'
                 ],
-                teacher: 'Sejin Li',
+                teacher: 'Umar',
                 balance: '200.000',
                 branch: 'Daegu',
                 addedAt: '2024.03.26',
@@ -132,7 +132,7 @@ export const studentData = {
         {
             id: 6,
             student: {
-                name: 'Mina Yoon',
+                name: 'Nozima Safaullayeva',
                 photo: '',
                 tel: '01078954091',
                 groupName: [
@@ -141,7 +141,7 @@ export const studentData = {
                 course: [
                     'IT English'
                 ],
-                teacher: 'Sooah Kim',
+                teacher: 'Aisha',
                 balance: '200.000',
                 branch: 'Daegu',
                 addedAt: '2024.03.26',

@@ -162,7 +162,7 @@ function GroupsPage() {
 
         <Table>
           <Thead>
-            <Tr $hoverNone>
+            <Tr $hoverNone $header>
               <Th style={{ width: "44px", padding: "0" }}></Th>
               <Th $big style={{ width: "257px" }}>
                 Group name

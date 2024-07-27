@@ -28,7 +28,7 @@ function Comment() {
   return (
     <Table style={{marginBottom:"100px"}}>
       <Thead>
-        <Tr $hoverNone>
+        <Tr $hoverNone $header>
             <Th></Th>
           <Th style={{ width: "579px"}}>Comment</Th>
           <Th style={{ width: "200px" }}>Creator</Th>

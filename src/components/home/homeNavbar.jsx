@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 function HomeNavbar() {
     return (
-        <div style={{ width: "100%", height: "70px", position: "relative" }}>
+        <div>
             <NavbarContainer>
                 <NavbarLeft>EduManSim</NavbarLeft>
                 <NavbarRight>

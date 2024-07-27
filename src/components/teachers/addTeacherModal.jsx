@@ -109,20 +109,20 @@ export function AddTeacherModal({ open, setOpen }) {
                             <ModalInputContainer>
                                 <ModalLabel>Branches</ModalLabel>
                                 <div style={{ display: "flex", color: "#6053B9" }}>
-                                    <FormControlLabel
-                                        control={<Checkbox />}
+                                    <FormControlLabel sx={{color:"#6053B9"}}
+                                        control={<Checkbox sx={{color:"#A098D5 !important"}}/>}
                                         label="Seoul"
                                     />
                                     <FormControlLabel
-                                        control={<Checkbox />}
+                                        control={<Checkbox sx={{color:"#A098D5 !important"}}/>}
                                         label="Gyeongsan"
                                     />
                                     <FormControlLabel
-                                        control={<Checkbox />}
+                                        control={<Checkbox sx={{color:"#A098D5 !important"}}/>}
                                         label="Daegu"
                                     />
                                     <FormControlLabel
-                                        control={<Checkbox />}
+                                        control={<Checkbox sx={{color:"#A098D5 !important"}}/>}
                                         label="Gwangju"
                                     />
                                 </div>

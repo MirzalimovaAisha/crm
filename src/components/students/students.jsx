@@ -209,7 +209,7 @@ function Students() {
         </FiltersContainer>
         <Table style={{ width: "1080px" }}>
           <Thead>
-            <Tr $hoverNone>
+            <Tr $hoverNone $header>
               <Th></Th>
               <Th style={{ width: "282px" }}>Full Names</Th>
               <Th $center style={{ width: "167px" }}>

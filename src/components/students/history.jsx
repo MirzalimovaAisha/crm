@@ -11,7 +11,7 @@ function History({ data }) {
   return (
     <GroupsCard style={{ width: "100%", marginBottom:"100px" }}>
       <HistoryCardTop>
-        <GroupName style={{ fontSize: "20px" }}>Status changed</GroupName>
+        <GroupName style={{ fontSize: "18px", margin:"0px" }}>Status changed</GroupName>
         <HistoryGap style={{ flexDirection: "column", alignItems: "end" }}>
           <HistoryCardData>
             {data.student.status.date} | {data.student.status.time}
@@ -36,14 +36,14 @@ function History({ data }) {
 
       <HistoryGap>
         <StartDate>Current status:</StartDate>
-        <HistoryCardData style={{ fontSize: "14px" }}>
+        <HistoryCardData style={{ fontSize: "12px" , fontWeight:"600" }}>
           {data.student.currentStatus}
         </HistoryCardData>
       </HistoryGap>
 
       <HistoryGap>
         <StartDate>Previos status:</StartDate>
-        <HistoryCardData style={{ fontSize: "14px" }}>
+        <HistoryCardData style={{ fontSize: "12px", fontWeight:"600" }}>
           {data.student.previosStatus}
         </HistoryCardData>
       </HistoryGap>

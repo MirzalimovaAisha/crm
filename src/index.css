@@ -102,16 +102,16 @@ body {
     color: #6053b9 !important;
 }
 
-.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+/* .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
   color: #A098D5 !important;
-}
+} */
 
 
 /* radio */
-.css-1hbvpl3-MuiSvgIcon-root,
+/* .css-1hbvpl3-MuiSvgIcon-root,
 .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked{
     color: #A098D5 !important;
-}
+} */
   
 
 
@@ -145,4 +145,37 @@ body {
 
 .css-x7r446-JoySelect-listbox{
     padding: 4px !important;
+}
+
+
+/* =============== tabs ================= */
+.css-1aquho2-MuiTabs-indicator{
+    display: none;
+}
+.css-heg063-MuiTabs-flexContainer{
+    height: 44px;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    width: 187px;
+    color: #2C2669 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s;
+    font-family: "Public Sans" !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    min-height: auto !important;
+}
+.css-jpln7h-MuiTabs-scroller{
+    border: 2px solid var(--600, #2C2669);
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+    transition: all 0.2s;
+    background: #2C2669 !important;
+    color: #fff !important;
+}
+.css-13xfq8m-MuiTabPanel-root{
+    padding: 30px 0px 0px !important;
 }

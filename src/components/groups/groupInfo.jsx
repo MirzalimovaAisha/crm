@@ -83,26 +83,25 @@ const GroupInfoComponent = () => {
   const filterData = data.filter((value) => value.id == id);
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", width:"1093px" }}>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <TeacherProfilePageContainer>
-        {/* <StudentPr  ofile data={resultData} /> */}
         {filterData.map((value) => (
           <GroupsCard>
             <StudentCardTop>
+            
+              <GroupProfile>
               {value.group.photo ? (
-                <img
-                  src={value.group.photo}
-                  alt=""
-                  style={{
-                    width: "70px",
-                    height: "70px",
-                    border: "1px solid #2C2669",
-                    borderRadius: "50%",
-                  }}
-                />
-              ) : (
-                <GroupProfile></GroupProfile>
-              )}
+                          <img
+                            src={value.group.photo}
+                            alt="group"
+                            style={{
+                              width: "100%",
+                            }}
+                          />
+                        ) : (
+                          value.group.name[0]
+                        )}
+              </GroupProfile>
               <img
                 src={moreIcon}
                 alt="profile img"
@@ -120,6 +119,7 @@ const GroupInfoComponent = () => {
                 MenuListProps={{
                   "aria-labelledby": "basic-button",
                 }}
+                sx={{padding:"0px"}}
               >
                 <MenuItem onClick={handleClose}>
                   <img src={editIcon} alt="" />

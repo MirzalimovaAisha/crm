@@ -89,10 +89,45 @@ export const Table = styled.table`
     box-shadow: 0px 0px 1px 0px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
 `;
 
+export const GThead = styled.div`
+    tr{
+        background: #FAFAFB;
+        width: 100%;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #EDF2F9;
+
+
+        &.head1{
+            height: 60px;
+            padding: 0px 0px 0px 56px;
+            gap: 20px;
+            background: #fff;
+
+            button{
+            }
+        }
+    }
+    `
+
+export const HeaderButton = styled.button`
+    display: flex;
+    padding: 7px 16px;
+    gap: 8px;
+    align-items: center;
+    border: 1px solid #2C2669;
+    border-radius: 25px;
+    background: #fff;
+    cursor: pointer;
+    color: #2C2669;
+    font-size: 14px;
+`
+
 export const Thead = styled.thead`
-    box-shadow: 0px -1px 0px 0px #EDF2F7 inset;
+    /* box-shadow: 0px -1px 0px 0px #EDF2F7 inset; */
     font-weight: bold;
-    height: 52px;
+    /* height: 52px; */
     display: flex;
     align-items: center;
     background: #FAFAFB;
@@ -104,7 +139,10 @@ export const Tbody = styled.tbody`
 `
 
 export const Tr = styled.tr`
+    height: ${(props)=> props.$header ? "54px" : "65px"};
     display: flex;
+    /* border-bottom: ; */
+    box-shadow: 0px -1px 0px 0px #EDF2F7 inset;
     &:hover {
         background: ${(props) => props.$hoverNone ? "none" : "#938b8b14"};
         cursor: ${(props) => props.$hoverNone ? "default" : "pointer"};
@@ -114,41 +152,64 @@ export const Tr = styled.tr`
 export const Th = styled.th`
     text-align: left;
     color: #A098D5;
-    font-family: "Public Sans";
     height: 100%;
     font-size: 12px;
     font-weight: 600;
-    /* padding: ${(props)=> props.$big ? "0px 30px" : "0px 20px"}; */
-    padding: 0px 20px;
+    padding: ${(props)=> props.$paddingNone ? "0" : "0px 20px"};
     display: flex;
     justify-content: ${(props)=> props.$center? "center" : "left"};
-    width: 44px;
+    width: ${(props)=> props.$70? "70px" : "44px"};
+    align-items: center;
 `;
 
 export const Td = styled.td`
     justify-content: ${(props)=> props.$center ? "center" : "left"};
-    /* width: 170px; */
-    height: 80px;
-    padding: 0px 20px;
-    border-top: 1px solid #EDF2F7;
+    padding: ${(props)=> props.$paddingNone ? "0px" : "0px 20px"};
+    /* border-top: 1px solid #EDF2F7; */
     text-align: left;
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 14px;
-    /* width: 44px; */
 
-    color: ${(props)=> props.$purple ? "#6053B9" : "#2C2669"};
+    color: ${(props)=> props.$purple ? "#2C2669 " : "#6053B9"};
     font-weight: ${(props)=> props.$bold ? "700" : "500"};
 `;
+
+export const BodyButton = styled.button`
+    width: 36px;
+    height: 24px;
+    /* border: 1px solid #CFCBEA; */
+    border: ${(props)=> props.$black ? "1px solid #2C2669" : " 1px solid #CFCBEA"};
+    background: none;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.42px;
+`
+
+export const IndividualButton = styled.button`
+    font-size: 12px;
+    color: ${(props)=> props.$pink ? "#6053B9" : "#EFEEF8"};
+    background: ${(props)=> props.$pink ? "#EFEEF8" : "#6053B9"};
+    padding: 4px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+`
+
+export const EditIcon = styled.img`
+    position: absolute;
+    right: -1px;
+    top: -5px;
+`
 
 export const NumberTd = styled.td`
     display: flex;
     align-items: center;
-    /* padding: 0px 30px 0 15px; */
     padding: 19px;
     text-align: left;
-    border-top: 1px solid #EDF2F7;
 
     color: #2C2669;
     font-family: "Public Sans";

@@ -18,6 +18,7 @@ export const GroupName = styled.div`
     font-weight: 400;
     line-height: 16px; 
     margin-bottom: 5px;
+    font-size: ${(props)=> props.$small ? "12px" : "14px"};
 `;
 
 export const StudentName = styled.div`
@@ -285,9 +286,9 @@ export const HistoryCardData = styled.div`
 export const HistoryCardMyName = styled.div`
     color: #6053B9;
     font-family: "Public Sans";
-    font-size: 23px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px; 
-    margin: 15px 0 20px 0;
+    margin: 0 0px  20px 0;
 `

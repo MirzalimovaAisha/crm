@@ -9,7 +9,7 @@ function Sms() {
     return (
         <Table style={{ marginBottom:"100px"}}>
             <Thead>
-                <Tr $hoverNone>
+                <Tr $hoverNone $header>
                     <Th></Th>
                     <Th style={{width: '652px', padding:"0px"}}>SMS</Th>
                     <Th style={{width: '182px'}}>Sender</Th>

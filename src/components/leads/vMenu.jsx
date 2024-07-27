@@ -7,9 +7,6 @@ import {
   TableAvatarLetter,
   TableDiv,
   TableNumber,
-  TableTr,
-  TableData,
-  TdLeds,
 } from "./style";
 
 import Menu from "@mui/material/Menu";
@@ -57,7 +54,7 @@ function VMenu() {
     <div>
       <Table>
         <Thead>
-          <Tr $hoverNone>
+          <Tr $hoverNone $header>
             <Th></Th>
             <Th style={{ width: "361px" }}>Lead name</Th>
             <Th style={{ width: "202px" }}>Phone number</Th>
@@ -69,7 +66,7 @@ function VMenu() {
         <Tbody>
           {data.map((value, key) => {
             return (
-              <TableTr key={key}>
+              <Tr key={key}>
                 <Td>
                   <TableNumber>{value.id}</TableNumber>
                 </Td>
@@ -124,7 +121,7 @@ function VMenu() {
                     </MenuItem>
                   </Menu>
                 </Td>
-              </TableTr>
+              </Tr>
             );
           })}
         </Tbody>

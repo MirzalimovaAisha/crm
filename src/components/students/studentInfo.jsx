@@ -57,7 +57,7 @@ function StudentInfo() {
       <TeacherProfilePageContainer>
         <StudentProfile data={resultData} />
 
-        <div style={{ display: "flex", justifyContent:"space-between" }}>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
           <TeacherProfileTabList>
             <TeacherProfileTabListBtn
               $first
@@ -90,25 +90,25 @@ function StudentInfo() {
               History
             </TeacherProfileTabListBtn>
           </TeacherProfileTabList>
-        {pages === "Comment" ? (
+          {pages === "Comment" ? (
             <TablistButton onClick={() => setCreateCommentModal(true)}>
-            <img src={plus} alt="" width={"16px"} />
-            Leave a new comment
-            <CreateCommentModal
-              open={openCreateCommentModal}
-              setOpen={handleCloseCommentModal}
+              <img src={plus} alt="" width={"16px"} />
+              Leave a new comment
+              <CreateCommentModal
+                open={openCreateCommentModal}
+                setOpen={handleCloseCommentModal}
               />
-          </TablistButton>
-        ) : pages === "SMS" ? (
+            </TablistButton>
+          ) : pages === "SMS" ? (
             <TablistButton onClick={() => setOpenSendSmsModal(true)}>
-            <img src={plus} alt="" width={"16px"} />
-            Send a new message
-            <SendSmsModal
-              open={openSendSmsModal}
-              setOpen={handleCloseSmsModal}
+              <img src={plus} alt="" width={"16px"} />
+              Send a new message
+              <SendSmsModal
+                open={openSendSmsModal}
+                setOpen={handleCloseSmsModal}
               />
-          </TablistButton>
-        ) : null}
+            </TablistButton>
+          ) : null}
         </div>
         {renderContent()}
       </TeacherProfilePageContainer>

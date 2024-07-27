@@ -18,6 +18,7 @@ export const SidebarContainer = styled.div`
     padding: 24px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border-right: 1px solid rgba(0, 0, 0, 0.10);
     border-radius: 12px;
     z-index: 101;
@@ -97,6 +98,6 @@ export const SidebarItemBetween = styled(Link)`
 `;
 
 export const SidebarProfile = styled.div`
-    position: absolute;
-    bottom: 24px;
+    /* position: absolute;
+    bottom: 24px; */
 `

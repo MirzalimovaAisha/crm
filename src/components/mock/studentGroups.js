@@ -6,7 +6,7 @@ export const studentGroupData = {
                 date: '2023.09.01',
                 amount: '- 0',
                 group: 'New elementary',
-                receiver: 'Ali Mirzo',
+                receiver: 'Bozorvoy Teshaboyev',
             }
         },
         {
@@ -15,7 +15,7 @@ export const studentGroupData = {
                 date: '2023.09.01',
                 amount: '- 200 000',
                 group: 'Texts for test and long title',
-                receiver: 'Ali Mirzo',
+                receiver: 'Bozorvoy Teshaboyev',
             }
         },
         {
@@ -24,7 +24,7 @@ export const studentGroupData = {
                 date: '2023.09.01',
                 amount: '+ 100 000',
                 group: 'Space',
-                receiver: 'Ali Mirzo',
+                receiver: 'Bozorvoy Teshaboyev',
             }
         },
     ]

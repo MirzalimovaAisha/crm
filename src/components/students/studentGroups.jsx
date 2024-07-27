@@ -65,7 +65,7 @@ function StudentGroups({ data }) {
             </GroupsContainer>
             <Table style={{width: '980px'}}>
                 <Thead>
-                    <Tr $hoverNone>
+                    <Tr $hoverNone $header>
                         <Th style={{width:"54px"}}></Th>
                         <Th style={{width: '167px'}}>Date</Th>
                         <Th style={{width: '207px'}}>Amount</Th>

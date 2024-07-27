@@ -5,7 +5,7 @@ export const teacherData = {
         {
             id: 1,
             teacher: {
-                fullName: 'Andrew Smith',
+                fullName: 'Umida Umiullayevna',
                 photo: profileImg,
                 phoneNumber: '01012345678',
                 groups: '0',
@@ -17,7 +17,7 @@ export const teacherData = {
         {
             id: 2,
             teacher: {
-                fullName: 'Minsu Kim',
+                fullName: 'Shoraximov Shamsiddin',
                 photo: '',
                 phoneNumber: '01012345678',
                 groups: '0',
@@ -29,7 +29,7 @@ export const teacherData = {
         {
             id: 3,
             teacher: {
-                fullName: 'Minho Yoon',
+                fullName: 'Botir Umarov',
                 photo: '',
                 phoneNumber: '01012345678',
                 groups: '0',
@@ -41,7 +41,7 @@ export const teacherData = {
         {
             id: 4,
             teacher: {
-                fullName: 'Sooah Baek',
+                fullName: 'Sherali Sheraliyev',
                 photo: '',
                 phoneNumber: '01012345678',
                 groups: '0',
@@ -53,7 +53,7 @@ export const teacherData = {
         {
             id: 5,
             teacher: {
-                fullName: 'Sejun Park',
+                fullName: 'Vaxob Vaxobov',
                 photo: '',
                 phoneNumber: '01012345678',
                 groups: '0',
@@ -65,7 +65,7 @@ export const teacherData = {
         {
             id: 6,
             teacher: {
-                fullName: 'Minah Yoon',
+                fullName: 'Nozima Safaullayeva',
                 photo: '',
                 phoneNumber: '01012345678',
                 groups: '0',
